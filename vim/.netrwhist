@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Applications/MAMP/htdocs/application/controllers'
+let g:netrw_dirhist_2='/Applications/MAMP/htdocs/application'
+let g:netrw_dirhist_3='/Applications/MAMP/htdocs'
+let g:netrw_dirhist_4='/Applications/MAMP'
+let g:netrw_dirhist_5='/Applications/MAMP/htdocs/application'
+let g:netrw_dirhist_6='/Applications/MAMP/htdocs/application/forms'
+let g:netrw_dirhist_7='/Applications/MAMP/htdocs/application/forms/Setting'
