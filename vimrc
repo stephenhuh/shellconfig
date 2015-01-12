@@ -1,17 +1,27 @@
-set number			  " display line numbers
+
+"" Tabs and Indentation
 set tabstop=4         " columns per tab
 set shiftwidth=4      " hitting Tab in insert mode will produce the appropriate number of spaces
 set softtabstop=4     "
-set noexpandtab       " dont use spaces when tab is pressed.
+set expandtab         " dont use spaces when tab is pressed.
+set smartindent
+set autoindent
+""Basic Config
 set colorcolumn=80    " highlights column specified
+set number			  " display line numbers
 set nocompatible	  " choose no compatibility with legacy vi
+set ruler			  " always show current position
+set cmdheight=2       " set height of the command bar
 
 
-"" Pathogen and Plugins
+"" Pathogen compatibility
 
 execute pathogen#infect()
 
-"" Config
+"" NERDTree Plugin Config
+map <C-n> :NERDTreeToggle<CR> "map ctrl+n to launch NERDTree
+set mouse=a                   "enable mouse control -- specifically for NERDTree
+
 
 highlight ColorColumn ctermbg=darkgray " specify highlight color
 filetype on
@@ -19,8 +29,7 @@ filetype plugin on
 filetype indent on
 syntax enable
 set guifont=Menlo:h14
-set smartindent
-set autoindent
+
 set laststatus=2
 set linespace=3
 set wrap
@@ -31,7 +40,7 @@ set exrc           " forces vim to source .vimrc file if present in working dire
                    " providing place to store project  specific configuration
 set secure         " restrict usage of some commands in non-default .vimrc files - esp write to file.
 
-"" Colors --> Solarized
+"" Colors
 set background=dark
 colorscheme solarized
 set t_Co=16 
@@ -44,4 +53,13 @@ set incsearch	   " incremental searches
 set ignorecase	   " searches are case insensitive
 set smartcase	   " ... unless they contain one capital letter
 
+"" Backups - Use Git and SVN instead.
 
+set nobackup
+set nowb
+set noswapfile
+
+"" Sounds
+set noerrorbells
+set novisualbell
+set tm=500
