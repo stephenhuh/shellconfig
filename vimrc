@@ -1,4 +1,8 @@
 
+"" Pathogen compatibility
+
+execute pathogen#infect()
+
 "" Tabs and Indentation
 set tabstop=4         " columns per tab
 set shiftwidth=4      " hitting Tab in insert mode will produce the appropriate number of spaces
@@ -7,23 +11,18 @@ set expandtab         " dont use spaces when tab is pressed.
 set smartindent
 set autoindent
 ""Basic Config
-set colorcolumn=80    " highlights column specified
+set colorcolumn=75    " highlights column specified
 set number			  " display line numbers
 set nocompatible	  " choose no compatibility with legacy vi
 set ruler			  " always show current position
 set cmdheight=2       " set height of the command bar
-
-
-"" Pathogen compatibility
-
-execute pathogen#infect()
 
 "" NERDTree Plugin Config
 map <C-n> :NERDTreeToggle<CR> "map ctrl+n to launch NERDTree
 set mouse=a                   "enable mouse control -- specifically for NERDTree
 
 
-highlight ColorColumn ctermbg=darkgray " specify highlight color
+highlight ColorColumn ctermbg=black" specify highlight color
 filetype on
 filetype plugin on
 filetype indent on
