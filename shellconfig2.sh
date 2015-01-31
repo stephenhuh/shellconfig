@@ -6,22 +6,22 @@
 #######################################################################
 
 ########## VARIABLES ################################################
-dir=~/shellconfig
-olddir=~/shellconfig_old
+dir=shellconfig
+olddir=shellconfig_old
 files="bashrc vimrc vim zshrc oh-my-zsh"
 ######################################################################
 
 # create shellconfig_old inside homedir
 echo "Creating $olddir for backup of any existing shellconfig files in ~"
-if [-a ~/shellconfig]
-    then echo "$olddir already exists!\n"
-        echo "would you like to still create and overwrite $olddir? (y or n):"
+if [ -e "~/shellconfig" ]
+    then echo "$olddir already exists!"
+         echo "would you like to still create and overwrite $olddir? (y or n):"
          read decision
-         if ["$decision" -eq "y"]
+         if [ "$decision" -eq "y" ]
             then echo "you said yes"
-            rm -rf $olddir
-            mkdir -pv $olddir #verbose and path creation
-         elif ["$decision" -eq "n"]
+            rm -rf ~/$olddir
+            mkdir -pv ~/$olddir #verbose and path creation
+         elif [ "$decision" -eq "n" ]
             then echo "you said no"
             exit
          else
@@ -29,16 +29,16 @@ if [-a ~/shellconfig]
             exit 1;
          fi
 fi
-echo "Creating the backup directory, $dir\n"
-mkdir -pv $dir
+echo "Creating the backup directory, $dir"
+mkdir -pv ~/$olddir
 echo "Let's back up your files now..."
 cd ~ 
 for file in $files; do
-    echo "Backing up .$file\n"
+    echo "Backing up .$file"
     mv ~/.$file ~/$olddir
-    if [-a ~/$dir/$file]
-        echo "Moving into home .$file\n"
-        mv ~/$dir/$file ~/.$file 
+    if [ -e "~/$dir/$file" ]
+	then echo "Moving into ~ .$file\n"
+       	     mv ~/$dir/$file ~/.$file
+    fi
 done
-
-echo "everything's good to go!"
+echo "everything is good to go!"
