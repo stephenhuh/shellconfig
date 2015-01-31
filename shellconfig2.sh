@@ -15,14 +15,13 @@ files="vimrc vim"
 echo "********************************************************"
 if [ -e "$HOME/$olddir" ]
     then echo "$olddir already exists!"
-         echo "would you like to still create and overwrite $olddir? (y or n):"
-         read decision
-         if [ "$decision" -eq "y" ]
+         read -p "would you like to overwrite $olddir? (y or n):" decision
+         if [ "$decision" == "y" ]
             then echo "you said yes"
             rm -rf ~/$olddir
             echo "removed that dusty directory"
             mkdir -pv ~/$olddir #verbose and path creation
-         elif [ "$decision" -eq "n" ]
+         elif [ "$decision" == "n" ]
             then echo "you said no"
                  echo "********************************************************"
             exit
