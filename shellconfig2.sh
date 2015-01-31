@@ -8,12 +8,11 @@
 ########## VARIABLES ################################################
 dir=shellconfig
 olddir=shellconfig_old
-files="bashrc vimrc vim zshrc oh-my-zsh"
+files="vimrc vim"
 ######################################################################
 
 # create shellconfig_old inside homedir
-echo "Creating $olddir for backup of any existing shellconfig files in ~"
-if [ -e "~/shellconfig" ]
+if [ -e "~/$olddir" ]
     then echo "$olddir already exists!"
          echo "would you like to still create and overwrite $olddir? (y or n):"
          read decision
@@ -32,13 +31,16 @@ fi
 echo "Creating the backup directory, $dir"
 mkdir -pv ~/$olddir
 echo "Let's back up your files now..."
-cd ~ 
 for file in $files; do
-    echo "Backing up .$file"
-    mv ~/.$file ~/$olddir
-    if [ -e "~/$dir/$file" ]
-	then echo "Moving into ~ .$file\n"
+    if [ -e "~/.$file" ]
+        then echo "Backing up .$file"
+	         mv ~/.$file ~/$olddir/$file
+	         echo "Now using new .$file\n"
        	     mv ~/$dir/$file ~/.$file
+	else
+	     echo ".$file doesnt exist already, skipping backup!"
+         echo "Now using new .$file\n" 
+	     cp ~/$dir/$file ~/.$file
     fi
 done
-echo "everything is good to go!"
+echo "enjoy your new shell"
