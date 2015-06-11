@@ -3,7 +3,7 @@ Use shellconfig to set your vim, vimrc, bash, bashrc, or other similar files qui
 
 ##Important Files ##
 files -- 
-/.vim/*
+/.vim / *
 /.vimrc
 /.zshrc
 /.tmux.conf
@@ -13,18 +13,20 @@ Remember to set solarized add-on theme onto Terminal afterwards.
 Was intended for use on OSX.
 
 ## My Selected Tools ##
-TextEditor:
-VIM -- Theme as MiroDark
+####Texteditor: VIM ###
 Pathogen
 NERDTree
+Ctrl P
+Syntastic
+Supertab
+MiroDark Theme
 
-Shell:
-Zsh
+####Shell: Zsh####
 oh-my-zsh
 nicoulaj theme
 
-Terminal:
+####Terminal####
 iTerm2
 
-Additional:
+####Additional:####
 TMUX

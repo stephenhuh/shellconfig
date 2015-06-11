@@ -4,14 +4,14 @@
 execute pathogen#infect()
 
 "" Tabs and Indentation
-set tabstop=2         " columns per tab
-set shiftwidth=2      " hitting Tab in insert mode will produce the appropriate number of spaces
-set softtabstop=2     "
+set tabstop=4         " columns per tab
+set shiftwidth=4      " hitting Tab in insert mode will produce the appropriate number of spaces
+set softtabstop=4     "
 set expandtab         " dont use spaces when tab is pressed.
-set smartindent
 set autoindent
+set smartindent
 ""Basic Config
-set colorcolumn=75   " highlights column specified
+set colorcolumn=100   " highlights column specified
 set number			  " display line numbers
 set nocompatible	  " choose no compatibility with legacy vi
 set ruler			  " always show current position
@@ -21,12 +21,11 @@ set cmdheight=2       " set height of the command bar
 map <C-n> :NERDTreeToggle<CR> "map ctrl+n to launch NERDTree
 set mouse=a                   "enable mouse control -- specifically for NERDTree
 
-
 highlight ColorColum ctermbg=green guibg=green
-filetype on
+filetype indent on
 filetype plugin on
 filetype indent on
-syntax enable
+syntax on
 set guifont=Menlo:h14
 
 set laststatus=2
@@ -62,3 +61,29 @@ set noswapfile
 set noerrorbells
 set novisualbell
 set tm=500
+
+"" Airline Plugin
+
+"" Javascript stuff
+
+"" Vim Javascript Plugin
+
+let b:javascript_fold = 1
+
+"" Syntastic Plugin
+
+""angular syntastic compatibility
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+
+""Matching Tags
+
+let g:mta_use_matchparen_group = 1
+
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xhtml' : 1,
+    \ 'phtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \ 'php' : 1,
+    \}
