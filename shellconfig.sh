@@ -1,36 +1,50 @@
 #!/bin/bash
-##########################
-# shellconfig.sh
-# this script creates symlinks from home directory to any desired dotfiles in ~/dotfiles
-##########################
+########################################################################
+# shellconfig2.sh
+# this is a much improved version of the old shellconfig.sh
+# it accounts for possible errors and adds element of user interaction
+#######################################################################
 
+########## VARIABLES ################################################
+dir=shellconfig
+olddir=shellconfig_old
+files="vimrc vim"
+######################################################################
 
-######### Variables
-dir=~/shellconfig
-olddir=~/shellconfig_old                         #old shellconfig backup directory
-files="bashrc vimrc vim zshrc oh-my-zsh"      #list of files/folders to symlink in homedir
-
-########
-
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
-
-# change to the dotfiles riectory
-echo "Changing to the $dir directory"
-cd $dir
-echo "...done"
-
-#move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
+# create shellconfig_old inside homedir
+echo "********************************************************"
+if [ -e "$HOME/$olddir" ]
+    then echo "$olddir already exists!"
+         read -p "would you like to overwrite $olddir? (y or n):" decision
+         if [ "$decision" == "y" ]
+            then echo "you said yes"
+            rm -rf ~/$olddir
+            echo "removed that dusty directory"
+            mkdir -pv ~/$olddir #verbose and path creation
+         elif [ "$decision" == "n" ]
+            then echo "you said no"
+                 echo "********************************************************"
+            exit
+         else
+            echo "invalid input"
+            exit 1;
+         fi
+fi
+echo "Creating the backup directory, $olddir"
+mkdir -pv ~/$olddir
+echo "Let's back up your files now..."
 for file in $files; do
-	echo "Moving any existing dotfiles from ~ to $olddir"
-	mv ~/.$file ~/dotfiles_old/
-	echo "Creating symlink to $file in home directory."
-	ln -s $dir/$file ~/.$file
+    if [ -e "$HOME/.$file" ]
+        then echo "Backing up .$file"
+	         mv ~/.$file ~/$olddir/$file
+	         echo "Now using new .$file"
+       	     mv ~/$dir/$file ~/.$file
+	else
+	     echo ".$file doesnt exist already, skipping backup!"
+         echo "Now using new .$file" 
+	     cp -r ~/$dir/$file ~/.$file
+    fi
 done
-
-
-
-
-
+echo "enjoy your new shell"
+echo "remember to activate solarized in add-ons folder in .vim"
+echo "********************************************************"
