@@ -1,4 +1,3 @@
-
 "" Pathogen compatibility
 
 execute pathogen#infect()
@@ -10,6 +9,7 @@ set softtabstop=4     "
 set expandtab         " dont use spaces when tab is pressed.
 set autoindent
 set smartindent
+
 ""Basic Config
 set colorcolumn=100   " highlights column specified
 set number			  " display line numbers
@@ -45,14 +45,12 @@ set t_Co=256
 let g:solarized_termcolors=256
 
 "" Searching
-
 set hlsearch 	   " highlight matched results
 set incsearch	   " incremental searches
 set ignorecase	   " searches are case insensitive
 set smartcase	   " ... unless they contain one capital letter
 
 "" Backups - Use Git and SVN instead.
-
 set nobackup
 set nowb
 set noswapfile
@@ -65,6 +63,9 @@ set tm=500
 "" Airline Plugin
 
 "" Javascript stuff
+
+"" Backspace compatibility fix
+set backspace=indent,eol,start
 
 "" Vim Javascript Plugin
 
@@ -88,3 +89,5 @@ let g:mta_filetypes = {
     \ 'php' : 1,
     \ 'server.view.html' : 1,
     \}
+
+""Shortcuts I use, = O, o, i, I, a, A, fc, Fc, dG, gx, <C>+v, u, U, /, x ,r
