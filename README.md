@@ -30,3 +30,13 @@ iTerm2
 
 ####Additional:####
 TMUX
+
+
+NOTES
+---
+use w, b, e, ge to move back and forth.
+no arrow keys to navigate
+use t<char> shortcuts
+leader keys are great.
+open tabs within vims
+http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
