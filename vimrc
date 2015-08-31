@@ -1,8 +1,9 @@
-" |--------------------------|
-" | Author: Zack Rosen       |
-" | Email: zjrosen@gmail.com |
-" | Info: A solid vimrc      |
-" |--------------------------|
+" |-----------------------------|
+" | Author: Stephen Huh         |
+" | Original : Zac Rosen        |
+" | Email: stephenhuh@gmail.com |
+" | Info: A solid vimrc         |
+" |-----------------------------|
 
 " [ Vundle Setup ]{{{1
 set nocompatible
@@ -62,7 +63,7 @@ Plugin 'ack.vim'
 call vundle#end()
 
 filetype plugin indent on
-" [ Prefrences ] {{{1
+" [ Preferences ] {{{1
 let mapleader = " "                    " Set global mapleader to space
 set noswapfile
 set autoindent
@@ -83,12 +84,13 @@ set smartcase                         " Try and be smart about cases
 nnoremap j gj
 nnoremap k gk
 " Appearance {{{2
-" set number                          " Always show line numbers
+set number                          " Always show line numbers
 set numberwidth=3                     " Changed the width of line number columns
 set listchars=tab:\|\ ,trail:·,eol:¬  " Use new symbols for tabstops and EOLs
-set ts=2 sts=2 sw=2 noexpandtab       " Default tab stops
+set ts=4 sts=4 sw=4 noexpandtab       " Default tab stops
 set backspace=indent,eol,start
 set showcmd                           " Shows incomplete command
+execute "set colorcolumn=" . join(range(81,335), ',')
 set novb noeb                         " Turn off visual bell and remove error beeps
 set splitbelow                        " New window goes below
 set splitright                        " New windows goes right
