@@ -31,6 +31,7 @@ iTerm2
 ####Additional:####
 TMUX
 
+<<<<<<< HEAD
 [![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg)](https://www.youtube.com/watch?v=9auOCbH5Ns4)
 
 # Installation
@@ -52,3 +53,14 @@ Search for all or specific plugins inside of vim
 		:PluginList
 
 		:PluginList ack
+
+NOTES
+---
+use w, b, e, ge to move back and forth.
+no arrow keys to navigate
+use t<char> shortcuts
+leader keys are great.
+open tabs within vims
+http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
+df? to delete to  a certain character
+use gt and gT to scroll thru tabs
