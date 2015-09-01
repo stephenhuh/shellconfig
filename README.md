@@ -1,6 +1,8 @@
+[![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg)](https://www.youtube.com/watch?v=9auOCbH5Ns4)
+# PURPOSE 
+Use stephenhuh's (forked from zjrosen)
+shellconfig to set your vim, vimrc, bash, bashrc, or other similar files quickly.
 
-# PURPOSE #
-Use shellconfig to set your vim, vimrc, bash, bashrc, or other similar files quickly.
 Ability to click on tmux panes.
 tmux matches VIM keys
 
@@ -12,19 +14,20 @@ tmux matches VIM keys
 
 	download powerline fonts from https://github.com/powerline/fonts
 	set iTerm2 non-ascii fonts to inconsolata for powerline at 12pt
+	set iTerm2 ascii font to hack 12 pt (preferred)
 # Update
 	
 	cd ~/.vim/shellconfig
 	./update.sh
 
-##Important Files ##
+##Important Files
 files -- 
 /.vim / *
 /.vimrc
 /.zshrc
 /.tmux.conf
-## My Selected Tools ##
-####Texteditor: VIM ###
+## My Selected Tools
+####Texteditor: VIM
 Pathogen
 NERDTree
 Ctrl P
@@ -32,14 +35,14 @@ Syntastic
 Supertab
 BadWolf Theme (Also able to use any theme within this vimrc)
 
-####Shell: Zsh####
+####Shell: Zsh
 oh-my-zsh
 nicoulaj theme
 
-####Terminal####
+####Terminal
 iTerm2
 
-####Additional:####
+####Additional:
 TMUX
 
 
