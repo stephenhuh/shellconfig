@@ -61,6 +61,11 @@ Search for all or specific plugins inside of vim
 
 		:PluginList ack
 
+####NOTES:
+Made for Badwolf colorscheme
+can use flazz/vim-colorschemes to alter
+
+
 VIM HOTKEYS TO REMEMBER
 ---
 use w, b, e, ge to move back and forth.
