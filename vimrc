@@ -474,14 +474,14 @@ let g:mustache_abbreviations = 1
 " autocmd vimenter * if !argc() | NERDTree | endif " Load NERDTree by default for directory
 
 map <C-n><C-t> :NERDTreeToggle<CR>
-map <leader>nt :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 " Airline {{{2
 " let g:Powerline_symbols = 'fancy'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'powerlineish'
 " Tmuxline {{{2
-" let g:tmuxline_preset = 'powerline'
+ let g:tmuxline_preset = 'powerline'
 " Promptline {{{2
 let g:promptline_theme = 'powerlineish'
 " Rainbow Parens {{{2
