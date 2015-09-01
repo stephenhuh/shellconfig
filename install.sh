@@ -7,7 +7,7 @@ while true; do
 	read -p "Do you want to continue y or n? " yn
 	case $yn in
 		[Yy]* ) 
-			ln -sf ~/.vim/vimrc ~/.vimrc ;
+			ln -sf ~/shellconfig/vimrc ~/.vimrc ;
 			git submodule update --init ;
 			vim +PluginInstall +qall
 			break;;

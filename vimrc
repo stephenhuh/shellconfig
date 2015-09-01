@@ -524,6 +524,6 @@ let g:gitgutter_enabled = 0
 let g:gitgutter_highlight_lines = 1
 nmap <leader>gt :GitGutterToggle<cr>
 " [ Modeline ] {{{1
-set modelines=1
+"set modelines=1
 " }}}
 " vim: set foldmethod=marker:
