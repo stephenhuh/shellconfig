@@ -8,6 +8,7 @@ tmux matches VIM keys
 
 # Installation
 
+	git clone vundle first
     git clone <git-url> ~/.vim
     cd ~/.vim
     ./install.sh

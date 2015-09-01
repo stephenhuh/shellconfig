@@ -1,10 +1,8 @@
 clear
-echo "Well congrats on taking the big step into my .ViM config!"
-echo ""
-echo "If you want to keep your .vimrc then back that shit up!"
+echo "Ready to update your shellconfig"
 echo ""
 while true; do
-	read -p "Do you want to continue y or n? " yn
+	read -p "Do you want to update your shellconfig?" yn
 	case $yn in
 		[Yy]* ) 
 			ln -sf ~/.vim/shellconfig/vimrc ~/.vimrc ;
