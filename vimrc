@@ -475,8 +475,9 @@ let g:mustache_abbreviations = 1
 
 map <C-n><C-t> :NERDTreeToggle<CR>
 map <leader>n :NERDTreeToggle<CR>
-" Airline {{{2
+" Airline & Powerline {{{2
 " let g:Powerline_symbols = 'fancy'
+" comment line below to run on Ubuntu
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'powerlineish'
