@@ -8,15 +8,21 @@ tmux matches VIM keys
 
 # Installation
 
-	git clone vundle first
-    git clone <git-url> ~/.vim
-    cd ~/.vim
-    ./install.sh
+	1. git clone vundle first
+		$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-	download powerline fonts from https://github.com/powerline/fonts
-	set iTerm2 non-ascii fonts to inconsolata for powerline at 12pt
-	set iTerm2 ascii font to hack 12 pt (preferred)
-# Update
+	2. Run install script
+		$ cd ~/.vim
+		$ ./install.sh
+
+	3. If you need powerline fonts
+		download powerline fonts from https://github.com/powerline/fonts
+		set iTerm2 non-ascii fonts to inconsolata for powerline at 12pt
+		set iTerm2 ascii font to hack 12 pt (preferred)
+	
+	4. If powerline is incompatible with your shell comment out powerline font lines as written in the vimrc
+
+# Update (Coming soon)
 	
 	cd ~/.vim/shellconfig
 	./update.sh
