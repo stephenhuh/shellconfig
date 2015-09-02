@@ -101,7 +101,7 @@ while true; do
 			vim +PluginInstall +qall
 			break;;
 		[Nn]* ) echo "Skipping vimrc";
-			exit;;
+			break;;
 		* ) echo "Please answer yes or no.";
 			echo "";;
 	esac
@@ -115,7 +115,7 @@ while true; do
 			ln -sf ~/.vim/shellconfig/tmux.conf ~/.tmux.conf ;
 			break;;
 		[Nn]* ) echo "Skipping tmux.conf";
-			exit;;
+			break;;
 		* ) echo "Please answer yes or no.";
 			echo "";;
 	esac
@@ -129,7 +129,7 @@ while true; do
 			ln -sf ~/.vim/shellconfig/zshrc ~/.zshrc ;
 			break;;
 		[Nn]* ) echo "Done with tmux.conf";
-			exit;;
+			break;;
 		* ) echo "Please answer yes or no.";
 			echo "";;
 	esac
@@ -144,7 +144,7 @@ while true; do
 			cat ~/.vim/shellconfig/bashrc >> ~/.bashrc
 			break;;
 		[Nn]* ) echo "Done with tmux.conf";
-			exit;;
+			break;;
 		* ) echo "Please answer yes or no.";
 			echo "";;
 	esac
