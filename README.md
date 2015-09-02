@@ -20,7 +20,7 @@ tmux matches VIM keys
 		set iTerm2 non-ascii fonts to inconsolata for powerline at 12pt
 		set iTerm2 ascii font to hack 12 pt (preferred)
 	
-	4. If powerline is incompatible with your shell comment out powerline font lines as written in the vimrc
+	4. If powerline is incompatible with your shell comment out powerline font lines as written in the vimrc (GNOME in particular)
 
 # Update (Coming soon)
 	
@@ -69,7 +69,8 @@ Search for all or specific plugins inside of vim
 
 ####NOTES:
 Made for Badwolf colorscheme
-can use flazz/vim-colorschemes to alter
+can use flazz/vim-colorschemes to alter colorschemes
+For GNOME shells get rid of powerline, use airline, then alias as allowed in installscript
 
 
 VIM HOTKEYS TO REMEMBER
