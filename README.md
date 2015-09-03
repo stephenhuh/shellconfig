@@ -75,15 +75,22 @@ For GNOME shells get rid of powerline, use airline, then alias as allowed in ins
 
 VIM HOTKEYS TO REMEMBER
 ---
-use w, b, e, ge to move back and forth.
-no arrow keys to navigate
-use t<char> shortcuts
-leader key is space are great.
-Nerdtree is <ldr> + n
-open tabs within vims
-http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
-df? to delete to  a certain character
-use gt and gT to scroll thru tabs
-"*y "*p to copy and paste to and from clipboard
-use visual mode scrolling to copy and paste
+* jhkl -> navigation
+* e,b E,B -> faster navigation
+* dont use arrowkeys
+* A, I insert mode in beginning or end of line
+* $ and 0 move to beginning or end without going into insert
+* o and O for insert line above below 
+* u and ctrl+r -> undo and redo
+* xp -> switch and replace two letters (x and p separately are useful as well)
+* r -> replace single character
+* gt, gT -> go back and forth between vim tabs
+* Nerdtree -> <ldr> + n with m+<?> for creating nodes
+* "*p  "*y --> paste and copy to clipboard
+* df<?> -> delete to character
+* / and ? -> search forward and backward for words with n and N for tabbing thru
+* dG -> delete from current to end of file
+* gg -> go to first line of file
+* G -> go to end of file
+
 
