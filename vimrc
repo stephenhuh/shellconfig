@@ -90,7 +90,7 @@ set listchars=tab:\|\ ,trail:·,eol:¬  " Use new symbols for tabstops and EOLs
 set ts=4 sts=4 sw=4 noexpandtab       " Default tab stops
 set backspace=indent,eol,start
 set showcmd                           " Shows incomplete command
-execute "set colorcolumn=" . join(range(81,335), ',')
+execute "set colorcolumn=" . join(range(101,335), ',')
 set novb noeb                         " Turn off visual bell and remove error beeps
 set splitbelow                        " New window goes below
 set splitright                        " New windows goes right
@@ -475,9 +475,10 @@ let g:mustache_abbreviations = 1
 
 map <C-n><C-t> :NERDTreeToggle<CR>
 map <leader>n :NERDTreeToggle<CR>
-" Airline {{{2
+" Airline & Powerline {{{2
 " let g:Powerline_symbols = 'fancy'
-let g:airline_powerline_fonts = 1
+" comment line below to run on Ubuntu
+"let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'powerlineish'
 " Tmuxline {{{2
