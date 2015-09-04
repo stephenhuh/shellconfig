@@ -92,5 +92,6 @@ VIM HOTKEYS TO REMEMBER
 * dG -> delete from current to end of file
 * gg -> go to first line of file
 * G -> go to end of file
+* % -> go to other bracket, other quote, etc
 
 
