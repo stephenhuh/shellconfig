@@ -103,5 +103,9 @@ VIM HOTKEYS TO REMEMBER
 * gg -> go to first line of file
 * G -> go to end of file
 * % -> go to other bracket, other quote, etc
+* zf, zo for code folding
+* f<?>, F<?> skip to ? char - forward and backwards
+
+
 
 
