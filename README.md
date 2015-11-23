@@ -16,6 +16,8 @@ tmux matches VIM keys
 	download powerline fonts from https://github.com/powerline/fonts
 	set iTerm2 non-ascii fonts to inconsolata for powerline at 12pt
 	set iTerm2 ascii font to hack 12 pt (preferred)
+
+	run some package manager install on tmux for that
 # Update
 	
 	cd ~/.vim/shellconfig
@@ -77,6 +79,8 @@ open tabs within vims
 http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
 df? to delete to  a certain character
 use gt and gT to scroll thru tabs
+use ctrl+w + o or s for new window splits
 "*y "*p to copy and paste to and from clipboard
 use visual mode scrolling to copy and paste
+nerd tree can be used to make nodes with m+c or m+<?>
 
