@@ -131,4 +131,6 @@ CTRL-A == Bind
 * Bind + x -> kill current
 * Bind + j -> join pane from..
 * Bind + b -> send pane to...
+* Bind + () -> move between sessions
+* Bind : ls -> list all sessions.
 
