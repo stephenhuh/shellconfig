@@ -117,6 +117,13 @@ VIM HOTKEYS TO REMEMBER
 * zf, zo for code folding
 * f<?>, F<?> skip to ? char - forward and backwards
 
+TMUX HOTKEYS TO REMEMBER
+---
+CTRL-A == Bind
+* Bind + hjkl
+* Bind + c -> new tab
+* Bind + n -> next tmux window
+
 
 
 
