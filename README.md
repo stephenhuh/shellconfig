@@ -117,6 +117,20 @@ VIM HOTKEYS TO REMEMBER
 * zf, zo for code folding
 * f<?>, F<?> skip to ? char - forward and backwards
 
-
-
+TMUX HOTKEYS TO REMEMBER
+---
+Session -> Window -> Panes
+CTRL-A == Bind
+* Bind + $ -> rename session
+* Bind + w -> rename window
+* Bind + c -> new tab
+* Bind + n -> next tmux window
+* Bind + j -> join pane from window
+* Bind + s -> send pane to window
+* Bind + R -> reload tmux config
+* Bind + x -> kill current
+* Bind + j -> join pane from..
+* Bind + b -> send pane to...
+* Bind + () -> move between sessions
+* Bind : ls -> list all sessions.
 
