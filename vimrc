@@ -526,6 +526,7 @@ let g:gitgutter_highlight_lines = 1
 nmap <leader>gt :GitGutterToggle<cr>
 " Some other syntax {{{2
 au BufNewFile,BufRead *.ejs set filetype=html
+au BufNewFile,BufRead *.jade set filetype=html
 "}}} 
 " [ Modeline ] {{{1
 "set modelines=1
