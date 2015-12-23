@@ -123,7 +123,5 @@ CTRL-A == Bind
 * Bind + hjkl
 * Bind + c -> new tab
 * Bind + n -> next tmux window
-
-
-
-
+* Bind + j -> join pane from window
+* Bind + s -> send pane to window
