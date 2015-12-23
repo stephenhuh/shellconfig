@@ -56,23 +56,11 @@ files --
 /.tmux.conf
 ## My Selected Tools
 ####Texteditor: VIM
-Pathogen
-NERDTree
-Ctrl P
-Syntastic
-Supertab
-BadWolf Theme (Also able to use any theme within this vimrc)
-
-####Shell: Zsh
-oh-my-zsh
-nicoulaj theme
-
-####Terminal
+Vundle
+oh-my-zsh - apple theme
 iTerm2
-
-####Additional:
 TMUX
-
+koala for sass
 
 ## Need Moar Plugins
 ###Vundle like its 2015
