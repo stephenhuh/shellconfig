@@ -136,3 +136,6 @@ CTRL-A == Bind
 * Bind + () -> move between sessions
 * Bind : ls -> list all sessions.
 
+#Webstorm Config
+Peacocks in Space theme
+Inconsolata for Powerline size 16 line spacing 1.4
