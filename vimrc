@@ -1,5 +1,5 @@
 " |-----------------------------|
-" | Author: Stephen Huh         |
+" | Author: Stephen Huh (pocket)|
 " | Original : Zac Rosen        |
 " | Email: stephenhuh@gmail.com |
 " | Info: A solid vimrc         |
@@ -531,4 +531,7 @@ au BufNewFile,BufRead *.jade set filetype=html
 " [ Modeline ] {{{1
 "set modelines=1
 " }}}
+" [ pocket: C/C++ compile ]
+map <F8> :w <CR> :!gcc -std=c++1y % -o %< && ./%< <CR>
+map <F9> :w <CR> :!cc % -o %< && ./%< <CR>
 " vim: set foldmethod=marker:
