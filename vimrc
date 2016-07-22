@@ -1,5 +1,5 @@
 " |-----------------------------|
-" | Author: Stephen Huh (pocket)|
+" | Author: Stephen Huh         |
 " | Original : Zac Rosen        |
 " | Email: stephenhuh@gmail.com |
 " | Info: A solid vimrc         |
@@ -60,9 +60,13 @@ Plugin 'ctrlp.vim'
 Plugin 'matchit.zip'
 Plugin 'ack.vim'
 
+" Seti Theme - pocket
+Plugin 'trusktr/seti.vim'
+
 call vundle#end()
 
 filetype plugin indent on
+
 " [ Preferences ] {{{1
 let mapleader = " "                    " Set global mapleader to space
 set noswapfile
@@ -531,7 +535,9 @@ au BufNewFile,BufRead *.jade set filetype=html
 " [ Modeline ] {{{1
 "set modelines=1
 " }}}
-" [ pocket: C/C++ compile ]
+" [ pocket: c/c++ shortcuts]
 map <F8> :w <CR> :!gcc -std=c++1y % -o %< && ./%< <CR>
 map <F9> :w <CR> :!cc % -o %< && ./%< <CR>
+
 " vim: set foldmethod=marker:
+
