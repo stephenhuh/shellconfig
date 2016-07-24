@@ -1,5 +1,5 @@
 #SCSS
-comment blocks for following (idiomatic css)[https://github.com/necolas/idiomatic-css/]
+comment blocks for following [idiomatic css](https://github.com/necolas/idiomatic-css/)
 ```
 snippet comment1
 	/* ==========================================================================
