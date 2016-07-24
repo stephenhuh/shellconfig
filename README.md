@@ -22,12 +22,13 @@ tmux matches VIM keys
 		$ brew install tmux
 
 ##Other
-
 	download powerline fonts from https://github.com/powerline/fonts for perfect aligning and better reading
 	set iTerm2 non-ascii fonts to inconsolata for powerline at 12pt
 	set iTerm2 ascii font to hack 12 pt (preferred)
 
 	run some package manager install on tmux for that
+
+	use [pocket-snippets file](pocket-snippets.md) for my own snippets 
 # Update
 	1. git clone vundle first
 		$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
