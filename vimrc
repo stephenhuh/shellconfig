@@ -1,6 +1,5 @@
 " |-----------------------------|
 " | Author: Stephen Huh         |
-" | Original : Zac Rosen        |
 " | Email: stephenhuh@gmail.com |
 " | Info: A solid vimrc         |
 " |-----------------------------|
