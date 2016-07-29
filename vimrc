@@ -1,66 +1,73 @@
 " |-----------------------------|
 " | Author: Stephen Huh         |
 " | Email: stephenhuh@gmail.com |
-" | Info: A solid vimrc         |
 " |-----------------------------|
 
 " [ Vundle Setup ]{{{1
 set nocompatible
 filetype off
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" Github
+" Delimiter - Close Quotes, Brackets, Etc
+Plugin 'raimondi/delimitmate'
+" Github Wrapper
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
+" Surround Text Shortcuts
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-repeat'
+" Commenting Shortcuts
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+" Visualize Undos
 Plugin 'sjl/gundo.vim'
 Plugin 'mattn/webapi-vim'
+" Github Gist Wrapper
 Plugin 'mattn/gist-vim'
 
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'edkolev/promptline.vim'
-"Plugin 'edkolev/tmuxline.vim'
 
 Plugin 'tommcdo/vim-exchange'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'kana/vim-smartinput'
-Plugin 'ervandew/supertab'
+" Code Completion using native search via tab
+" Plugin 'ervandew/supertab'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mattn/emmet-vim'
-Plugin 'kien/rainbow_parentheses.vim'
+
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'gabesoft/vim-ags'
+" Load Schemes Automatically
 Plugin 'flazz/vim-colorschemes'
 
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
 
+" Sick Snippets - See Customs within Shellconfig
+Plugin 'honza/vim-snippets'
+Plugin 'garbas/vim-snipmate'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'evidens/vim-twig'
 Plugin 'pangloss/vim-javascript'
 
 " vim-scripts
 Plugin 'Tabular'
+" File Explorer
 Plugin 'ctrlp.vim'
 Plugin 'matchit.zip'
 Plugin 'ack.vim'
-
-" Seti Theme - pocket
+" Seti Theme
 Plugin 'trusktr/seti.vim'
+" Documentation Search via Dash
+Plugin 'rizzatti/dash.vim'
 
 call vundle#end()
 
@@ -195,7 +202,9 @@ inoremap <C-c> <ESC>									" Just smart
 inoremap jj <ESC>
 inoremap jk <ESC>
 inoremap fd <ESC>
-
+" No ESC key - ever - pocket
+vno v <esc>
+inoremap <esc> <NOP>
 " Force quit that bitch
 nmap fq :q!<CR>
 " Filetype {{{2
@@ -280,6 +289,8 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+
 " [ Leader Mappings ] {{{1
 " Save a file -- fs {{{2
 nmap <leader>fs :w<CR>
@@ -488,13 +499,6 @@ let g:airline_theme = 'powerlineish'
  let g:tmuxline_preset = 'powerline'
 " Promptline {{{2
 let g:promptline_theme = 'powerlineish'
-" Rainbow Parens {{{2
-" nmap <leader>r :RainbowParenthesesToggle<CR>
-" au Syntax * RainbowParenthesesLoadRound
-" au Syntax * RainbowParenthesesLoadSquare
-" au Syntax * RainbowParenthesesLoadBraces
-" let g:rbpt_max = 16
-" let g:rbpt_loadcmd_toggle = 0
 " Syntastic {{{2
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 5
@@ -534,9 +538,7 @@ au BufNewFile,BufRead *.jade set filetype=html
 " [ Modeline ] {{{1
 "set modelines=1
 " }}}
-" [ pocket: c/c++ shortcuts]
+" [ pocket: c/c++ shortcuts] {{{1
 map <F8> :w <CR> :!gcc -std=c++1y % -o %< && ./%< <CR>
 map <F9> :w <CR> :!cc % -o %< && ./%< <CR>
-
 " vim: set foldmethod=marker:
-
