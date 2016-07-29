@@ -38,8 +38,10 @@ Plugin 'edkolev/promptline.vim'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'kchmck/vim-coffee-script'
+
 " Code Completion using native search via tab
 " Plugin 'ervandew/supertab'
+
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mattn/emmet-vim'
 
@@ -455,6 +457,9 @@ endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 
 " [ Plugins ] {{{1
+" SnipMate & DelimitMate Compatibiity {{{2
+" Prevent S-Tab conflict with DelimitMate
+imap <C-d> <Plug>snipMateBack
 " vmath {{{2
 vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++

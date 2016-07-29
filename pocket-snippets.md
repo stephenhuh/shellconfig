@@ -22,5 +22,14 @@ snippet comment3
 snippet comment4
 	/* ${0:Basic comment} */
 ```
-
-
+#Markdown
+```
+snippet c
+	\`\`\`
+	${1:code}
+	\`\`\`
+snippet cjs
+	\`\`\`javascript
+	${1:code}
+	\`\`\`
+```
