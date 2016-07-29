@@ -85,6 +85,7 @@ syntax enable                          " Enable syntax highlighting
 set nostartofline                      " Don't reset cursor to start of line when moving around
 set ttyfast
 set history=1000
+
 " Searching/Moving {{{2
 " nnoremap / /\v
 " vnoremap / /\v
@@ -192,13 +193,7 @@ nnoremap * *<c-o>
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
 
-" Searching {{{2
-" Control space to search mode
-nnoremap <Nul> /
 
-" Keep search matches in the middle of the window
-nnoremap n nzzzv
-nnoremap N Nzzzv
 " Escaping {{{2
 inoremap <C-c> <ESC>									" Just smart
 inoremap jj <ESC>
@@ -224,6 +219,10 @@ nmap _vi :set ft=vim<CR>
 nnoremap <Tab> za
 " Use leader z to "focus" the current fold
 nnoremap <leader>z zMzvzz
+" Auto load views
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview 
+ 
 " Bubble single lines {{{2
 nmap <C-Up> [e
 nmap <C-Down> ]e
@@ -508,7 +507,7 @@ let g:promptline_theme = 'powerlineish'
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 5
 nmap <leader>st :SyntasticToggleMode<cr>
-" let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['jshint']
 " Toggle errors
 " Tabularize {{{2
 if exists(":Tabularize")
@@ -541,9 +540,8 @@ au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.jade set filetype=html
 "}}} 
 " [ Modeline ] {{{1
-"set modelines=1
+set modelines=1
 " }}}
 " [ pocket: c/c++ shortcuts] {{{1
 map <F8> :w <CR> :!gcc -std=c++1y % -o %< && ./%< <CR>
 map <F9> :w <CR> :!cc % -o %< && ./%< <CR>
-" vim: set foldmethod=marker:
