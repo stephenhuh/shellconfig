@@ -100,7 +100,7 @@ nnoremap k gk
 set number                          " Always show line numbers
 set numberwidth=3                     " Changed the width of line number columns
 set listchars=tab:\|\ ,trail:·,eol:¬  " Use new symbols for tabstops and EOLs
-set ts=4 sts=4 sw=4 noexpandtab       " Default tab stops
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set backspace=indent,eol,start
 set showcmd                           " Shows incomplete command
 execute "set colorcolumn=" . join(range(101,335), ',')
@@ -538,10 +538,18 @@ nmap <leader>gt :GitGutterToggle<cr>
 " Some other syntax {{{2
 au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.jade set filetype=html
+au BufNewFile,BufRead *.pug set filetype=html
 "}}} 
 " [ Modeline ] {{{1
 set modelines=1
 " }}}
-" [ pocket: c/c++ shortcuts] {{{1
+" [ C/C++ ] {{{1
 map <F8> :w <CR> :!gcc -std=c++1y % -o %< && ./%< <CR>
 map <F9> :w <CR> :!cc % -o %< && ./%< <CR>
+	set shell=bash\ -i		
+" [ Elm ] {{{1		
+let g:elm_format_autosave = 1		
+" }}}		
+" [ Project Specific VIMRC ] {{{1		
+set exrc		
+" }}}

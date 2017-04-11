@@ -87,15 +87,16 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 #uncommon hacks
  export NODE_ENV='development'
 
-# #ALIAI
+# SCRIPTS
 # #alias ssh-saio="ssh centos@52.0.181.205 -i ~/keys/saio"
 # #alias ssh-uh="ssh root@104.236.113.105 -i ~/keys/UH"
 # #alias ssh-fwa2="ssh centos@52.20.59.243 -i ~/keys/Freenters-20.pem"
 # #alias ssh-fwa2dev="ssh centos@52.71.170.105 -i ~/keys/Freenters-20.pem"
 # #alias skype="sudo /Applications/Skype.app/Contents/MacOS/Skype"
 # alias compile="g++ -std=c++11"
- #alias moss="~/moss original.java wojak.java"
- alias ngrok="ngrok http 3000"
+#alias moss="~/moss original.java wojak.java"
+alias ssh-twine="ssh centos@34.203.115.224 -i ~/.ssh/twine.pemA"
+alias ngrok="ngrok http 3000"
 
  export NVM_DIR="$HOME/.nvm"
  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
