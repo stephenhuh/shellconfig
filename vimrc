@@ -70,6 +70,10 @@ Plugin 'ack.vim'
 Plugin 'trusktr/seti.vim'
 " Documentation Search via Dash
 Plugin 'rizzatti/dash.vim'
+" Syntax highlighting for Pug/Jade		
+Plugin 'digitaltoad/vim-jade'		
+" Elm Compilation and Formatting		
+Plugin 'elmcast/elm-vim'
 
 call vundle#end()
 
