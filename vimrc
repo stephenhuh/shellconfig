@@ -330,9 +330,11 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove<cr>
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " Buffers {{{2
-nmap <leader>T :enew<cr>
-nmap <leader>l :bnext<CR>
+nmap <leader>T :enew<cr> 
+" Move between buffer
+nmap <leader>l :bnext<CR>"
 nmap <leader>h :bprevious<CR>
+" Show all open buffers
 nmap <leader>bl :ls<CR>
 
 " Extras for now {{{2
