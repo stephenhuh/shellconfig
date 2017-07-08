@@ -37,10 +37,9 @@ Plugin 'edkolev/promptline.vim'
 
 Plugin 'tommcdo/vim-exchange'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'kchmck/vim-coffee-script'
 
 " Code Completion using native search via tab
-" Plugin 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mattn/emmet-vim'
@@ -60,6 +59,9 @@ Plugin 'heavenshell/vim-jsdoc'
 Plugin 'evidens/vim-twig'
 Plugin 'pangloss/vim-javascript'
 
+" es6
+Plugin 'isRuslan/vim-es6'
+
 " vim-scripts
 Plugin 'Tabular'
 " File Explorer
@@ -68,12 +70,14 @@ Plugin 'matchit.zip'
 Plugin 'ack.vim'
 " Seti Theme
 Plugin 'trusktr/seti.vim'
-" Documentation Search via Dash
-Plugin 'rizzatti/dash.vim'
 " Syntax highlighting for Pug/Jade		
 Plugin 'digitaltoad/vim-jade'		
 " Elm Compilation and Formatting		
 Plugin 'elmcast/elm-vim'
+
+"Deprecated: Plugin 'kchmck/vim-coffee-script'
+"Deprecated : Documentation Search via Dash
+"Plugin 'rizzatti/dash.vim'
 
 call vundle#end()
 
@@ -404,56 +408,6 @@ function! SummarizeTabs()
 	endtry
 endfunction
 
-" Run Tests {{{2
-function! RunTests(filename)
-  " Write the file and run tests for the given filename
-  :w
-  :silent !clear
-  if match(a:filename, '\.feature$') != -1
-    exec ":!bundle exec cucumber " . a:filename
-  elseif match(a:filename, '_test\.rb$') != -1
-    if filereadable("bin/testrb")
-      exec ":!bin/testrb " . a:filename
-    else
-      exec ":!ruby -Itest " . a:filename
-    end
-  else
-    if filereadable("Gemfile")
-      exec ":!bundle exec rspec --color " . a:filename
-    else
-      exec ":!rspec --color " . a:filename
-    end
-  end
-endfunction
-
-function! SetTestFile()
-  " set the spec file that tests will be run for.
-  let t:grb_test_file=@%
-endfunction
-
-function! RunTestFile(...)
-  if a:0
-    let command_suffix = a:1
-  else
-    let command_suffix = ""
-  endif
-
-  " run the tests for the previously-marked file.
-  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
-  if in_test_file
-    call SetTestFile()
-  elseif !exists("t:grb_test_file")
-    return
-  end
-  call RunTests(t:grb_test_file . command_suffix)
-endfunction
-
-function! RunNearestTest()
-  let spec_line_number = line('.')
-  call RunTestFile(":" . spec_line_number . " -b")
-endfunction
-
-" run test runner
 " map <leader>t :call RunTestFile()<cr>
 " map <leader>T :call RunNearestTest()<cr>
 " Visual Mode */# from Scrooloose {{{2
@@ -484,9 +438,6 @@ let g:user_emmet_leader_key = '<c-e>'
 nmap <leader>ga :Git add -A<CR>
 nmap <leader>gc :Gcommit -a<CR>
 nmap <leader>gp :Git push<CR>
-" CoffeeScript {{{2
-nnoremap <leader>cw :CoffeeWatch<cr>
-nnoremap <leader>cr :CoffeeRun<cr>
 " CtrlP {{{2
 let g:ctrlp_custom_ignore = 'bower_components\|node_modules\|DS_Store\|git'
 let g:ctrlp_match_window_bottom = 0 " Show at top of window
