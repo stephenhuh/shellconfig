@@ -20,7 +20,6 @@ Plugin 'tpope/vim-endwise'
 " Surround Text Shortcuts
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-repeat'
 " Commenting Shortcuts
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -43,8 +42,6 @@ Plugin 'ervandew/supertab'
 
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mattn/emmet-vim'
-
-Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'gabesoft/vim-ags'
 " Load Schemes Automatically
 Plugin 'flazz/vim-colorschemes'
@@ -76,8 +73,10 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'elmcast/elm-vim'
 
 "Deprecated: Plugin 'kchmck/vim-coffee-script'
-"Deprecated : Documentation Search via Dash
-"Plugin 'rizzatti/dash.vim'
+"Deprecated: Documentation Search via Dash
+"Deprecated: Plugin 'rizzatti/dash.vim'
+"Deprecated: Plugin 'tpope/vim-repeat'
+"Deprecated: Plugin 'AndrewRadev/splitjoin.vim'
 
 call vundle#end()
 
