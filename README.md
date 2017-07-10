@@ -8,18 +8,20 @@ tmux matches VIM keys
 
 # Installation
 
-	Prereq: Use iTerm2 (https://www.iterm2.com/)
-	1. Download Vundle First.
+	1. Use iTerm2 (https://www.iterm2.com/)
+	2. Download Vundle First.
 		$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	2. Clone this repo into ~/.vim
+	3. Clone this repo into ~/.vim
 		$ cd ~/.vim
 		$ git clone https://github.com/stephenhuh/shellconfig 
-	3. Run the installer (and download all vundle packs automatically)
+	4. Run the installer (and download all vundle packs automatically)
 		$ cd ~/.vim/shellconfig
 		$ ./install.sh
-	4. Get Homebrew at brew.sh
-	5. Get tmux 
+	5. Get Homebrew at brew.sh
+	6. Get tmux 
 		$ brew install tmux
+  7. Get dracula theme for ITERM2
+    $ git clone https://github.com/dracula/iterm.git
 
 ##Other
 1. download powerline fonts from https://github.com/powerline/fonts for perfect aligning and better reading
@@ -43,17 +45,6 @@ tmux matches VIM keys
 	
 	4. If powerline is incompatible with your shell comment out powerline font lines as written in the vimrc (GNOME in particular)
 
-# Update (Coming soon)
-	
-	cd ~/.vim/shellconfig
-	./update.sh
-
-##Important Files
-files -- 
-/.vim / *
-/.vimrc
-/.zshrc
-/.tmux.conf
 ## My Selected Tools
 ####Texteditor: VIM
 Vundle
@@ -76,11 +67,10 @@ Search for all or specific plugins inside of vim
 
 		:PluginList ack
 
-####NOTES:
+###NOTES:
 Made for Badwolf colorscheme
 can use flazz/vim-colorschemes to alter colorschemes
 For GNOME shells get rid of powerline, use airline, then alias as allowed in installscript
-
 
 VIM HOTKEYS TO REMEMBER
 ---
@@ -96,6 +86,7 @@ use gt and gT to scroll thru tabs
 use ctrl+w + o or s for new window splits
 "*y "*p to copy and paste to and from clipboard
 use visual mode scrolling to copy and paste
+
 nerd tree can be used to make nodes with m+c or m+<?>
 =======
 * jhkl -> navigation
