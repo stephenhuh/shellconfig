@@ -84,8 +84,7 @@ ZSH_THEME="apple"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
-#uncommon hacks
- export NODE_ENV='development'
+export NODE_ENV='development'
 
 # SCRIPTS
 # #alias ssh-saio="ssh centos@52.0.181.205 -i ~/keys/saio"

@@ -454,16 +454,9 @@ let g:mustache_abbreviations = 1
 
 map <C-n><C-t> :NERDTreeToggle<CR>
 map <leader>n :NERDTreeToggle<CR>
-" Airline & Powerline {{{2
-" let g:Powerline_symbols = 'fancy'
+" Airline  {{{2
 " comment line below to run on Ubuntu
-"let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'powerlineish'
-" Tmuxline {{{2
- let g:tmuxline_preset = 'powerline'
-" Promptline {{{2
-let g:promptline_theme = 'powerlineish'
 " Syntastic {{{2
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 5
@@ -513,4 +506,4 @@ let g:elm_format_autosave = 1
 " }}}		
 " [ Project Specific VIMRC ] {{{1		
 set exrc		
-" }}}
+" }}
