@@ -3,7 +3,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/steviejay/.oh-my-zsh
-export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/bin:~/gitrepos/private-snippets/scriptz
+bindkey -v 
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
