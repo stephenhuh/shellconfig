@@ -74,18 +74,19 @@ For GNOME shells get rid of powerline, use airline, then alias as allowed in ins
 
 VIM HOTKEYS TO REMEMBER
 ---
-use w, b, e, ge to move back and forth.
-no arrow keys to navigate
-use t<char> shortcuts
-leader key is space are great.
-Nerdtree is <ldr> + n
-open tabs within vims
-http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
-df? to delete to  a certain character
-use gt and gT to scroll thru tabs
-use ctrl+w + o or s for new window splits
-"*y "*p to copy and paste to and from clipboard
-use visual mode scrolling to copy and paste
+* note that vim is enabled for zsh
+* use w, b, e, ge to move back and forth.
+* no arrow keys to navigate
+* use t<char> shortcuts
+* leader key is space are great.
+* Nerdtree is <ldr> + n
+* open tabs within vims
+* http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
+* df? to delete to  a certain character
+* use gt and gT to scroll thru tabs
+* use ctrl+w + o or s for new window splits
+* "*y "*p to copy and paste to and from clipboard
+* use visual mode scrolling to copy and paste
 
 nerd tree can be used to make nodes with m+c or m+<?>
 =======
@@ -126,6 +127,8 @@ CTRL-A == Bind
 * Bind + b -> send pane to...
 * Bind + () -> move between sessions
 * Bind : ls -> list all sessions.
+* tmux ls, tmux detach, tmux attach
+* Tmux is configured inside zsh
 
 #Webstorm Config
 Peacocks in Space theme

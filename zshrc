@@ -6,8 +6,11 @@ plugins=(vi-mode web-search tmux wd docker)
 export ZSH=/Users/steviejay/.oh-my-zsh
 
 
-#PLUGIN CONFIGURATION
+#TMUX PLUGIN CONFIGURATION
 ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOQUIT=false
+ZSH_TMUX_AUTOSTART_ONCE=true
+
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
