@@ -1,10 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export PATH=$PATH:/usr/local/bin:~/gitrepos/private-snippets/scriptz
+plugins=(vi-mode web-search tmux)
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/steviejay/.oh-my-zsh
-export PATH=$PATH:/usr/local/bin:~/gitrepos/private-snippets/scriptz
-bindkey -v 
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -53,7 +52,6 @@ ZSH_THEME="apple"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
