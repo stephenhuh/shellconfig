@@ -72,11 +72,11 @@ Plugin 'digitaltoad/vim-jade'
 " Elm Compilation and Formatting		
 Plugin 'elmcast/elm-vim'
 
-"Deprecated: Plugin 'kchmck/vim-coffee-script'
-"Deprecated: Documentation Search via Dash
-"Deprecated: Plugin 'rizzatti/dash.vim'
-"Deprecated: Plugin 'tpope/vim-repeat'
-"Deprecated: Plugin 'AndrewRadev/splitjoin.vim'
+" Deprecated: Plugin 'kchmck/vim-coffee-script'
+" Deprecated: Documentation Search via Dash
+" Deprecated: Plugin 'rizzatti/dash.vim'
+" Deprecated: Plugin 'tpope/vim-repeat'
+" Deprecated: Plugin 'AndrewRadev/splitjoin.vim'
 
 call vundle#end()
 
@@ -93,6 +93,10 @@ set nostartofline                      " Don't reset cursor to start of line whe
 set ttyfast
 set history=1000
 
+" Reduce delay in switching modes
+" https://www.johnhawthorn.com/2012/09/vi-escape-delays/
+" Needs time to process "j k" keys 
+set timeoutlen=150 ttimeoutlen=0
 " Searching/Moving {{{2
 " nnoremap / /\v
 " vnoremap / /\v
@@ -128,23 +132,23 @@ colorscheme badwolf
 " [ Auto Commands ] {{{1
 " Auto source vimrc on save {{{2
 augroup reload_vimrc " {
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
 " Restore cursor position {{{2
 if has("autocmd")
-	filetype plugin indent on
-	autocmd BufReadPost *
-		\ if line("'\"") > 1 && line("'\"") <= line("$") |
-		\   exe "normal! g`\"" |
-		\ endif
+filetype plugin indent on
+autocmd BufReadPost *
+  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
 endif
 
 " Set filetype {{{2
- if has("autocmd")
-	au BufNewFile,BufRead *.hbs set ft=html
- endif
+if has("autocmd")
+au BufNewFile,BufRead *.hbs set ft=html
+endif
 " Save on losing focus {{{2
 au FocusLost * :wa
 " Resize splits when window is resized {{{2
@@ -155,18 +159,18 @@ au VimResized * exe "normal! \<c-w>="
 
 function! FormatprgLocal(filter)
 if !empty(v:char)
-  return 1
+return 1
 else
-  let l:command = v:lnum.','.(v:lnum+v:count-1).'!'.a:filter
-  echo l:command
-  execute l:command
+let l:command = v:lnum.','.(v:lnum+v:count-1).'!'.a:filter
+echo l:command
+execute l:command
 endif
 endfunction
 
 if has("autocmd")
-  let pandoc_pipeline  = "pandoc --from=html --to=markdown"
-  let pandoc_pipeline .= " | pandoc --from=markdown --to=html"
-  autocmd FileType html setlocal formatexpr=FormatprgLocal(pandoc_pipeline)
+let pandoc_pipeline  = "pandoc --from=html --to=markdown"
+let pandoc_pipeline .= " | pandoc --from=markdown --to=html"
+autocmd FileType html setlocal formatexpr=FormatprgLocal(pandoc_pipeline)
 endif
 " [ Mappings ] {{{1
 " Stuff {{{2
@@ -202,13 +206,12 @@ nmap gV `[v`]
 
 
 " Escaping {{{2
-inoremap <C-c> <ESC>									" Just smart
-inoremap jj <ESC>
+inoremap <C-c> <ESC>
 inoremap jk <ESC>
 inoremap fd <ESC>
-" No ESC key - ever - pocket
-vno v <esc>
-inoremap <esc> <NOP>
+" Enable esc for people using my computer lol
+" vno v <esc>
+" inoremap <esc> <NOP>
 " Force quit that bitch
 nmap fq :q!<CR>
 " Filetype {{{2
@@ -242,10 +245,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 " Window Resizing {{{2
-nnoremap <Left> :vertical resize +1<CR>
-nnoremap <Right> :vertical resize -1<CR>
-nnoremap <Up> :resize +1<CR>
-nnoremap <Down> :resize -1<CR>
+" nnoremap <Left> :vertical resize +1<CR>
+" nnoremap <Right> :vertical resize -1<CR>
+" nnoremap <Up> :resize +1<CR>
+" nnoremap <Down> :resize -1<CR>
 " Insert Movement {{{2
 imap <C-e> <C-o>$
 imap <C-a> <C-o>0
@@ -302,8 +305,6 @@ vnoremap <F1> <ESC>
 " [ Leader Mappings ] {{{1
 " Save a file -- fs {{{2
 nmap <leader>fs :w<CR>
-nmap <leader>fw :silent execute "!say -v Daniel -r 90 -f ~/Dropbox/fp &>/dev/null &" <bar> redraw!<CR>
-nmap <leader>fp :silent execute "!killall say &>/dev/null &" <bar> redraw!<CR>
 " Update vimrc -- v OR ev {{{2
 nmap <leader>v :tabedit $MYVIMRC<CR>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
@@ -327,11 +328,11 @@ nmap <leader>" viwS"
 nmap <leader>' viwS'
 " Tab Editing {{{2
 " Useful mappings for managing taps
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove<cr>
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+" map <leader>tn :tabnew<cr>
+" map <leader>to :tabonly<cr>
+" map <leader>tc :tabclose<cr>
+" map <leader>tm :tabmove<cr>
+" map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " Buffers {{{2
 nmap <leader>T :enew<cr> 
 " Move between buffer
