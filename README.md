@@ -22,6 +22,8 @@ tmux matches VIM keys
 		$ brew install tmux
   7. Get dracula theme for ITERM2
     $ git clone https://github.com/dracula/iterm.git
+  8. Fix vim git
+    $ git config --global core.editor $(which vim)
 
 ##Other
 1. download powerline fonts from https://github.com/powerline/fonts for perfect aligning and better reading
