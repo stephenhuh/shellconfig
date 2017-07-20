@@ -71,6 +71,8 @@ Plugin 'trusktr/seti.vim'
 Plugin 'digitaltoad/vim-jade'		
 " Elm Compilation and Formatting		
 Plugin 'elmcast/elm-vim'
+" CTags Viewer
+Plugin 'majutsushi/tagbar'
 
 " Deprecated: Plugin 'kchmck/vim-coffee-script'
 " Deprecated: Documentation Search via Dash
@@ -224,6 +226,7 @@ nmap _js :set ft=javascript<CR>
 nmap _zs :set ft=zsh<CR>
 nmap _md :set ft=mkd<CR>
 nmap _vi :set ft=vim<CR>
+nmap <F7> :TagbarToggle<CR>
 
 " Folding {{{2
 nnoremap <Tab> za
