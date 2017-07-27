@@ -54,7 +54,6 @@ Plugin 'honza/vim-snippets'
 Plugin 'garbas/vim-snipmate'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'evidens/vim-twig'
-Plugin 'pangloss/vim-javascript'
 
 " es6
 Plugin 'isRuslan/vim-es6'
@@ -73,6 +72,14 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'elmcast/elm-vim'
 " CTags Viewer
 Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+
+"Javascript
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
+let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 
 " Deprecated: Plugin 'kchmck/vim-coffee-script'
 " Deprecated: Documentation Search via Dash
@@ -442,12 +449,13 @@ nmap <leader>ga :Git add -A<CR>
 nmap <leader>gc :Gcommit -a<CR>
 nmap <leader>gp :Git push<CR>
 " CtrlP {{{2
-let g:ctrlp_custom_ignore = 'bower_components\|node_modules\|DS_Store\|git'
 let g:ctrlp_match_window_bottom = 0 " Show at top of window
 let g:ctrlp_working_path_mode = 2 " Smart path mode
 let g:ctrlp_mru_files = 1 " Enable Most Recently Used files feature
 let g:ctrlp_jump_to_buffer = 2 " Jump to tab AND buffer if already open
 let g:ctrlp_split_window = 1 " <CR> = New Tab
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
 " MultipleCursors {{{2
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_quit_key='<C-c>'
@@ -464,8 +472,9 @@ let g:airline#extensions#tabline#enabled = 1
 " Syntastic {{{2
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 5
+let g:syntastic_python_python_exec = '/Library/Frameworks/Python.framework/Versions/3.6/bin/python3' 
 nmap <leader>st :SyntasticToggleMode<cr>
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['jsxhint']
 " Toggle errors
 " Tabularize {{{2
 if exists(":Tabularize")
@@ -502,7 +511,7 @@ au BufNewFile,BufRead *.pug set filetype=html
 set modelines=1
 " }}}
 " [ C/C++ ] {{{1
-map <F8> :w <CR> :!gcc -std=c++1y % -o %< && ./%< <CR>
+" map <F8> :w <CR> :!gcc -std=c++1y % -o %< && ./%< <CR>
 map <F9> :w <CR> :!cc % -o %< && ./%< <CR>
 	set shell=bash\ -i		
 " [ Elm ] {{{1		
