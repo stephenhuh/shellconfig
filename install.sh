@@ -1,3 +1,4 @@
+#/bi/bash -xe
 clear
 asciiwelcome() {
 cat << "EOT"
