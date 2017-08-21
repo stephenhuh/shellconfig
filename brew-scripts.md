@@ -4,3 +4,4 @@
 2. `$brew install ngrok` 
 3. `$brew install tree`
 4. `brew install the_silver_searcher`
+5. `brew install nmap`
