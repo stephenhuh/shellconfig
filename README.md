@@ -81,7 +81,8 @@ VIM HOTKEYS TO REMEMBER
 * no arrow keys to navigate
 * use t<char> shortcuts
 * leader key is space are great.
-* Nerdtree is <ldr> + n
+* Nerdtree is <ldr> + n  -- open with o
+* CtrlP open with ctrl + o
 * open tabs within vims
 * http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
 * df? to delete to  a certain character
@@ -132,6 +133,10 @@ CTRL-A == Bind
 * tmux ls, tmux detach, tmux attach
 * Tmux is configured inside zsh
 
+iTERM HOTKEYS TO REMEMBER
+---
+* CMD + / -> Find Cursor
+* CMD + Arrows -> move between tabs
 #Webstorm Config
 Peacocks in Space theme
 Inconsolata for Powerline size 16 line spacing 1.4

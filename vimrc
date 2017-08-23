@@ -240,7 +240,8 @@ nnoremap <Tab> za
 " Use leader z to "focus" the current fold
 nnoremap <leader>z zMzvzz
 " Auto load views
-autocmd BufWinLeave *.* mkview
+" http://vim.wikia.com/wiki/Make_views_automatic
+autocmd BufWinLeave *.* mkview!
 autocmd BufWinEnter *.* silent loadview 
  
 " Bubble single lines {{{2
@@ -345,7 +346,7 @@ nmap <leader>' viwS'
 " map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " Buffers {{{2
 nmap <leader>T :enew<cr> 
-" Move between buffer
+" Move between buffer (Prefer default mappings)
 nmap <leader>l :bnext<CR>"
 nmap <leader>h :bprevious<CR>
 " Show all open buffers
