@@ -91,4 +91,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+alias pg-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias ctags="/usr/local/Cellar/ctags/5.8_1/bin/ctags"
+alias initdb="/usr/local/Cellar/postgresql/9.6.5/bin/initdb"
+alias psql="/usr/local/Cellar/postgresql/9.6.5/bin/psql"
