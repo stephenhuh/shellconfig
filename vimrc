@@ -14,19 +14,21 @@ Plugin 'gmarik/Vundle.vim'
 
 " Delimiter - Close Quotes, Brackets, Etc
 Plugin 'raimondi/delimitmate'
+
 " Github Wrapper
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-endwise'
+
 " Surround Text Shortcuts
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
+
 " Commenting Shortcuts
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+
+" Syntax Checker
 Plugin 'scrooloose/syntastic'
+
 " Visualize Undos
 Plugin 'sjl/gundo.vim'
-Plugin 'mattn/webapi-vim'
 " Github Gist Wrapper
 Plugin 'mattn/gist-vim'
 
@@ -69,7 +71,7 @@ Plugin 'trusktr/seti.vim'
 " Syntax highlighting for Pug/Jade		
 Plugin 'digitaltoad/vim-jade'		
 " Elm Compilation and Formatting		
-Plugin 'elmcast/elm-vim'
+"Plugin 'elmcast/elm-vim'
 " CTags Viewer
 Plugin 'majutsushi/tagbar'
 Plugin 'xolox/vim-misc'
@@ -77,15 +79,9 @@ Plugin 'xolox/vim-easytags'
 
 "Javascript
 Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
-let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
-
-" Deprecated: Plugin 'kchmck/vim-coffee-script'
-" Deprecated: Documentation Search via Dash
-" Deprecated: Plugin 'rizzatti/dash.vim'
-" Deprecated: Plugin 'tpope/vim-repeat'
-" Deprecated: Plugin 'AndrewRadev/splitjoin.vim'
+"Plugin 'mxw/vim-jsx'
+let g:jsx_ext_required = 0 
+"let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 
 call vundle#end()
 
@@ -120,7 +116,13 @@ nnoremap k gk
 set number                          " Always show line numbers
 set numberwidth=3                     " Changed the width of line number columns
 set listchars=tab:\|\ ,trail:·,eol:¬  " Use new symbols for tabstops and EOLs
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+set tabstop=2       " The width of a TAB is set to 4.
+                    " Still it is a \t. It is just that
+                    " Vim will interpret it to be having
+                    " a width of 4.
+set shiftwidth=2    " Indents will have a width of 4
+set softtabstop=2   " Sets the number of columns for a TAB
+set expandtab       " Expand TABs to spaces
 set backspace=indent,eol,start
 set showcmd                           " Shows incomplete command
 execute "set colorcolumn=" . join(range(101,335), ',')
@@ -217,7 +219,6 @@ nmap gV `[v`]
 " Escaping {{{2
 inoremap <C-c> <ESC>
 inoremap jk <ESC>
-inoremap fd <ESC>
 " Enable esc for people using my computer lol
 " vno v <esc>
 " inoremap <esc> <NOP>
@@ -391,34 +392,6 @@ function! QuickfixFilenames()
 		return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
 	endfunction
 
-" Set tabstop, softtabstop and shiftwidth to the same value {{{2
-command! -nargs=* Stab call Stab()
-function! Stab()
-	let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
-	if l:tabstop > 0
-		let &l:sts = l:tabstop
-		let &l:ts = l:tabstop
-		let &l:sw = l:tabstop
-	endif
-	call SummarizeTabs()
-endfunction
-
-function! SummarizeTabs()
-	try
-		echohl ModeMsg
-		echon 'tabstop='.&l:ts
-		echon ' shiftwidth='.&l:sw
-		echon ' softtabstop='.&l:sts
-		if &l:et
-			echon ' expantab'
-		else
-			echon ' noexpandtab'
-		endif
-	finally
-		echohl None
-	endtry
-endfunction
-
 " map <leader>t :call RunTestFile()<cr>
 " map <leader>T :call RunNearestTest()<cr>
 " Visual Mode */# from Scrooloose {{{2
@@ -475,7 +448,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_python_python_exec = '/Library/Frameworks/Python.framework/Versions/3.6/bin/python3' 
 nmap <leader>st :SyntasticToggleMode<cr>
-let g:syntastic_javascript_checkers = ['jsxhint']
+nmap <leader>sc :SyntasticCheck<cr>
+let g:syntastic_mode_map = {"mode" : "passive", 'passive_filetypes': ['java','cpp', 'py', 'html']}
+let g:jsx_ext_required = 1
+let g:syntastic_javascript_checkers = ['eslint']
 " Toggle errors
 " Tabularize {{{2
 if exists(":Tabularize")
@@ -505,8 +481,8 @@ let g:gitgutter_highlight_lines = 1
 nmap <leader>gt :GitGutterToggle<cr>
 " Some other syntax {{{2
 au BufNewFile,BufRead *.ejs set filetype=html
-au BufNewFile,BufRead *.jade set filetype=html
-au BufNewFile,BufRead *.pug set filetype=html
+" au BufNewFile,BufRead *.jade set filetype=html
+" au BufNewFile,BufRead *.pug set filetype=html
 "}}} 
 " [ Modeline ] {{{1
 set modelines=1
