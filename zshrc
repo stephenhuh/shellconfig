@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 
-export PATH=$PATH:/usr/local/bin:~/gitrepos/private-snippets/scriptz
+export PATH=$PATH:/usr/local/bin:~/gitrepos/private-snippets/scriptz:~/anaconda3/bin
 plugins=(vi-mode web-search tmux wd docker)
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/steviejay/.oh-my-zsh
@@ -95,4 +95,6 @@ alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.p
 alias pg-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias ctags="/usr/local/Cellar/ctags/5.8_1/bin/ctags"
 alias initdb="/usr/local/Cellar/postgresql/9.6.5/bin/initdb"
-alias psql="/usr/local/Cellar/postgresql/9.6.5/bin/psql"
+alias aws="python3 -m awscli"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
