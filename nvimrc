@@ -1,74 +1,91 @@
 " |-----------------------------|
 " | Author: Stephen Huh         |
 " | Email: stephenhuh@gmail.com |
-" | Neovim config               |
 " |-----------------------------|
 
+" [ Vundle Setup ]{{{1
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" Plugin Manager:
-" Note: Any plugin that can be largely replicated using core vim DO NOT
-" INSTALL. Aim to sharpen the saw, not just add to it.
-" Auto-install vim-plug
-" Start plugins:
-call plug#begin('~/.config/nvim/plugged')
-
-" Fuzzy Finder
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
 " Delimiter - Close Quotes, Brackets, Etc
-Plug 'raimondi/delimitmate'
+Plugin 'raimondi/delimitmate'
 
 " Github Wrapper
-Plug 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 " Surround Text Shortcuts
-Plug 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
 " Commenting Shortcuts
-Plug 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 " Syntax Checker
-Plug 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
-Plug 'bling/vim-airline'
-Plug 'airblade/vim-gitgutter'
-Plug 'edkolev/promptline.vim'
-Plug 'terryma/vim-multiple-cursors'
+" Visualize Undos
+Plugin 'sjl/gundo.vim'
+" Github Gist Wrapper
+Plugin 'mattn/gist-vim'
+
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'edkolev/promptline.vim'
+
+Plugin 'tommcdo/vim-exchange'
+Plugin 'terryma/vim-multiple-cursors'
 
 " Code Completion using native search via tab
-Plug 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 
-Plug 'Lokaltog/vim-easymotion'
-Plug 'mattn/emmet-vim'
-
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'mattn/emmet-vim'
+Plugin 'gabesoft/vim-ags'
 " Load Schemes Automatically
-Plug 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
+
+Plugin 'marcweber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
 
 " Sick Snippets - See Customs within Shellconfig
-Plug 'honza/vim-snippets'
-Plug 'heavenshell/vim-jsdoc'
-Plug 'evidens/vim-twig'
+Plugin 'honza/vim-snippets'
+Plugin 'garbas/vim-snipmate'
+Plugin 'heavenshell/vim-jsdoc'
+Plugin 'evidens/vim-twig'
 
+" es6
+Plugin 'isRuslan/vim-es6'
+
+" vim-scripts
+Plugin 'Tabular'
+" File Explorer
+Plugin 'ctrlp.vim'
+Plugin 'matchit.zip'
+Plugin 'ack.vim'
+" Seti Theme
+Plugin 'trusktr/seti.vim'
 " Syntax highlighting for Pug/Jade		
-Plug 'digitaltoad/vim-jade'		
-
+Plugin 'digitaltoad/vim-jade'		
+" Elm Compilation and Formatting		
+"Plugin 'elmcast/elm-vim'
 " CTags Viewer
-Plug 'majutsushi/tagbar'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
+Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
 
 "Javascript
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-
-call plug#end()
-
-"Fuzzy Finding
-nnoremap <C-p> :Files<CR>
-set rtp+=/usr/local/opt/fzf
+Plugin 'pangloss/vim-javascript'
+"Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0 
-let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+"let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+
+call vundle#end()
+
+filetype plugin indent on
 
 " [ Preferences ] {{{1
 let mapleader = " "                    " Set global mapleader to space
@@ -147,11 +164,41 @@ endif
 au FocusLost * :wa
 " Resize splits when window is resized {{{2
 au VimResized * exe "normal! \<c-w>="
+" Clean up nasty wysiwig html {{{2
+" Install pandoc first
+" https://code.google.com/p/pandoc/downloads/list
+
+function! FormatprgLocal(filter)
+if !empty(v:char)
+return 1
+else
+let l:command = v:lnum.','.(v:lnum+v:count-1).'!'.a:filter
+echo l:command
+execute l:command
+endif
+endfunction
+
+if has("autocmd")
+let pandoc_pipeline  = "pandoc --from=html --to=markdown"
+let pandoc_pipeline .= " | pandoc --from=markdown --to=html"
+autocmd FileType html setlocal formatexpr=FormatprgLocal(pandoc_pipeline)
+endif
 " [ Mappings ] {{{1
 " Stuff {{{2
 
 cmap w!! %!sudo tee> /dev/null %
 command! W w												" Remap :W to :w
+
+nnoremap Y y$												" Yank to end of line with Y
+nnoremap D d$												" Delete to end of line with D
+
+nmap _j vipJV"+yu										" For a SO question i answered, joins lines and copies to system clipboard
+
+" like gv but for pasted text
+" nnoremap <leader>v V`]
+
+" Not sure about this one quite yet
+" nnoremap ; :
 
 " :Wrap to wrap lines command! -nargs=* Wrap set wrap linebreak nolist
 
@@ -195,8 +242,8 @@ nnoremap <Tab> za
 nnoremap <leader>z zMzvzz
 " Auto load views
 " http://vim.wikia.com/wiki/Make_views_automatic
-" autocmd BufWinLeave *.* mkview!
-" autocmd BufWinEnter *.* silent loadview 
+autocmd BufWinLeave *.* mkview!
+autocmd BufWinEnter *.* silent loadview 
  
 " Bubble single lines {{{2
 nmap <C-Up> [e
@@ -415,7 +462,17 @@ if exists(":Tabularize")
 	nmap <leader>t> :Tabularize /=><CR>
 	vmap <leader>t> :Tabularize /=><CR>
 endif
+" Ag The Silver Searcher {{{2
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
 
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 " JsDoc {{{2
 nmap <silent> <leader>js <Plug>(jsdoc)
 " Git Gutter {{{2
@@ -434,6 +491,9 @@ set modelines=1
 " map <F8> :w <CR> :!gcc -std=c++1y % -o %< && ./%< <CR>
 map <F9> :w <CR> :!cc % -o %< && ./%< <CR>
 	set shell=bash\ -i		
+" [ Elm ] {{{1		
+let g:elm_format_autosave = 1		
+" }}}		
 " [ Project Specific VIMRC ] {{{1		
 set exrc		
 " }}

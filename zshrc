@@ -96,5 +96,9 @@ alias pg-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.
 alias ctags="/usr/local/Cellar/ctags/5.8_1/bin/ctags"
 alias initdb="/usr/local/Cellar/postgresql/9.6.5/bin/initdb"
 alias aws="python3 -m awscli"
+alias nv="nvim"
 
+# Fuzzy Finder
+## Use ripgrep, show files, search hidden files, follow symlinks, ignore .git files
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
