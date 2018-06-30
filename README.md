@@ -9,8 +9,7 @@ tmux matches VIM keys
 # Installation
 
 	1. Use iTerm2 (https://www.iterm2.com/)
-	2. Download Vundle First.
-		$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	2. Download vim-plug
 	3. Clone this repo into ~/.vim
 		$ cd ~/.vim
 		$ git clone https://github.com/stephenhuh/shellconfig 
@@ -25,7 +24,7 @@ tmux matches VIM keys
   8. Fix vim git
     $ git config --global core.editor $(which vim)
 
-##Other
+## Other
 1. download powerline fonts from https://github.com/powerline/fonts for perfect aligning and better reading
 2. set iTerm2 non-ascii fonts to inconsolata for powerline at 12pt
 3. set iTerm2 ascii font to hack 12 pt (preferred)
@@ -48,28 +47,16 @@ tmux matches VIM keys
 	4. If powerline is incompatible with your shell comment out powerline font lines as written in the vimrc (GNOME in particular)
 
 ## My Selected Tools
-####Texteditor: VIM
-Vundle
+#### Texteditor: VIM
 oh-my-zsh - apple theme
 iTerm2
 TMUX
 koala for sass
 
 ## Need Moar Plugins
-###Vundle like its 2015
+See vim-plug repo.
 
-Add a new plugin to your vimrc
-
-		Plugin 'moar/plugin'
-		:PluginInstall
-
-Search for all or specific plugins inside of vim
-
-		:PluginList
-
-		:PluginList ack
-
-###NOTES:
+### NOTES:
 Made for Badwolf colorscheme
 can use flazz/vim-colorschemes to alter colorschemes
 For GNOME shells get rid of powerline, use airline, then alias as allowed in installscript
@@ -90,6 +77,7 @@ VIM HOTKEYS TO REMEMBER
 * use ctrl+w + o or s for new window splits
 * "*y "*p to copy and paste to and from clipboard
 * use visual mode scrolling to copy and paste
+* gD, gd, g*, g# for go-to like functionality
 
 nerd tree can be used to make nodes with m+c or m+<?>
 =======
@@ -137,6 +125,7 @@ iTERM HOTKEYS TO REMEMBER
 ---
 * CMD + / -> Find Cursor
 * CMD + Arrows -> move between tabs
+
 #Webstorm Config
 Peacocks in Space theme
 Inconsolata for Powerline size 16 line spacing 1.4
