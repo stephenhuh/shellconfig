@@ -4,13 +4,29 @@
 " | Neovim config               |
 " |-----------------------------|
 
-
 " Plugin Manager:
 " Note: Any plugin that can be largely replicated using core vim DO NOT
 " INSTALL. Aim to sharpen the saw, not just add to it.
 " Auto-install vim-plug
+
+
+" Paths
+let g:node_host_prog = '/usr/local/bin/neovim-node-host'
+" let g:python2_host_prog = <path>
+" let g:python3_host_prog = <path>
+
 " Start plugins:
 call plug#begin('~/.config/nvim/plugged')
+
+" Linting
+Plug 'w0rp/ale'
+
+" Autocomplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" Typescript
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript',       { 'do': './install.sh' }
 
 " Fuzzy Finder
 Plug '/usr/local/opt/fzf'
@@ -29,7 +45,7 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 
 " Syntax Checker
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 
 Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
@@ -37,10 +53,10 @@ Plug 'edkolev/promptline.vim'
 Plug 'terryma/vim-multiple-cursors'
 
 " Code Completion using native search via tab
-Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'
 
-Plug 'Lokaltog/vim-easymotion'
-Plug 'mattn/emmet-vim'
+"Plug 'Lokaltog/vim-easymotion'
+"Plug 'mattn/emmet-vim'
 
 " Load Schemes Automatically
 Plug 'flazz/vim-colorschemes'
@@ -54,9 +70,9 @@ Plug 'evidens/vim-twig'
 Plug 'digitaltoad/vim-jade'		
 
 " CTags Viewer
-Plug 'majutsushi/tagbar'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
+"Plug 'majutsushi/tagbar'
+"Plug 'xolox/vim-misc'
+"Plug 'xolox/vim-easytags'
 
 "Javascript
 Plug 'pangloss/vim-javascript'
@@ -64,11 +80,47 @@ Plug 'mxw/vim-jsx'
 
 call plug#end()
 
-"Fuzzy Finding
+" Fuzzy Finding
 nnoremap <C-p> :Files<CR>
 set rtp+=/usr/local/opt/fzf
 let g:jsx_ext_required = 0 
-let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+" let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+
+" Copying and Pasting 
+" " Copy to clipboard using star register. (use :reg to see registers) 
+vnoremap  <leader>y  "*y
+nnoremap  <leader>Y  "*yg_
+nnoremap  <leader>y  "*y
+nnoremap  <leader>yy  "*yy
+
+" " Paste from clipboard using star register.
+nnoremap <leader>p "*p
+nnoremap <leader>P "*P                  
+vnoremap <leader>p "*p
+vnoremap <leader>P "*P
+
+" Disable F1, use :h instead.
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" Searching 
+" " Set external grep utility to use ripgrep
+if executable('rg')
+  set grepprg=rg
+endif
+
+
+" Plugins:
+" w0rp/ale
+let b:ale_fixers = ['tslint', 'prettier']
+" tslint on save
+autocmd BufWritePost * !tslint % --fix
+ 
+" Plug 'mhartington/nvim-typescript'
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_debug = 1
+let g:deoplete#enable_profile = 1
 
 " [ Preferences ] {{{1
 let mapleader = " "                    " Set global mapleader to space
@@ -78,7 +130,7 @@ set smartindent
 set hidden                             " Useful for auto setting hidden buffers
 syntax enable                          " Enable syntax highlighting
 set nostartofline                      " Don't reset cursor to start of line when moving around
-set ttyfast
+"set ttyfast                           " Default for neovim
 set history=1000
 
 " Reduce delay in switching modes
@@ -138,6 +190,7 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 endif
+
 
 " Set filetype {{{2
 if has("autocmd")
@@ -229,15 +282,6 @@ vmap <D-[> >gv
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-" Syntax highlighting groups for word under cursor {{{2
-" nmap <C-S-P> :call <SID>SynStack()<CR>
-" function! <SID>SynStack()
-" 	if !exists("*synstack")
-" 		return
-" 	endif
-" 	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-" endfunc
-
 " Awesome fucking pasting {{{2
 function! WrapForTmux(s)
   if !exists('$TMUX')
@@ -261,10 +305,6 @@ endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-" Fuck F1 one help to rule them all :h {{{2
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
 
 
 " [ Leader Mappings ] {{{1
@@ -400,11 +440,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 5
 let g:syntastic_python_python_exec = '/Library/Frameworks/Python.framework/Versions/3.6/bin/python3' 
-nmap <leader>st :SyntasticToggleMode<cr>
-nmap <leader>sc :SyntasticCheck<cr>
-let g:syntastic_mode_map = {"mode" : "passive", 'passive_filetypes': ['java','cpp', 'py', 'html']}
-let g:jsx_ext_required = 1
-let g:syntastic_javascript_checkers = ['eslint']
+" nmap <leader>st :SyntasticToggleMode<cr>
+" nmap <leader>sc :SyntasticCheck<cr>
+" let g:syntastic_mode_map = {"mode" : "passive", 'passive_filetypes': ['java','cpp', 'py', 'html']}
+" let g:jsx_ext_required = 1
+" let g:syntastic_javascript_checkers = ['eslint']
 " Toggle errors
 " Tabularize {{{2
 if exists(":Tabularize")
