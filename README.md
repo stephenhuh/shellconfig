@@ -79,6 +79,12 @@ VIM HOTKEYS TO REMEMBER
 * use visual mode scrolling to copy and paste
 * gD, gd, g*, g# for go-to like functionality
 
+##Sick Vim-specific things
+
+```
+autocmd BufWritePost * !./build.sh
+```
+
 nerd tree can be used to make nodes with m+c or m+<?>
 =======
 * jhkl -> navigation
