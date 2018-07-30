@@ -82,7 +82,8 @@ VIM HOTKEYS TO REMEMBER
 ##Sick Vim-specific things
 
 ```
-autocmd BufWritePost * !./build.sh
+autocmd BufWritePost * !./build.sh #set up commands to run upon writing
+autocmd! #clear autocmds
 ```
 
 nerd tree can be used to make nodes with m+c or m+<?>
@@ -95,6 +96,7 @@ nerd tree can be used to make nodes with m+c or m+<?>
 * o and O for insert line above below 
 * u and ctrl+r -> undo and redo
 * xp -> switch and replace two letters (x and p separately are useful as well)
+* :bp, bn, etc -> buffer stuffj
 * r -> replace single character
 * gt, gT -> go back and forth between vim tabs
 * Nerdtree -> <ldr> + n with m+<?> for creating nodes
@@ -107,6 +109,8 @@ nerd tree can be used to make nodes with m+c or m+<?>
 * % -> go to other bracket, other quote, etc
 * zf, zo for code folding
 * f<?>, F<?> skip to ? char - forward and backwards
+* cw -> change word at cursor
+* ciw -> change full word 
 
 TMUX HOTKEYS TO REMEMBER
 ---
