@@ -9,11 +9,10 @@
 " INSTALL. Aim to sharpen the saw, not just add to it.
 " Auto-install vim-plug
 
-
 " Paths
 let g:node_host_prog = '/usr/local/bin/neovim-node-host'
-" let g:python2_host_prog = <path>
-" let g:python3_host_prog = <path>
+let g:python2_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/Users/steviejay/anaconda3/bin/python3'
 
 " Start plugins:
 call plug#begin('~/.config/nvim/plugged')
@@ -24,9 +23,15 @@ Plug 'w0rp/ale'
 " Autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+" HTML/Others (Many)
+Plug 'Shougo/neco-syntax'
+
 " Typescript
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript',       { 'do': './install.sh' }
+
+" Vue
+Plug 'posva/vim-vue'
 
 " Fuzzy Finder
 Plug '/usr/local/opt/fzf'
@@ -53,10 +58,7 @@ Plug 'edkolev/promptline.vim'
 Plug 'terryma/vim-multiple-cursors'
 
 " Code Completion using native search via tab
-"Plug 'ervandew/supertab'
-
-"Plug 'Lokaltog/vim-easymotion'
-"Plug 'mattn/emmet-vim'
+" Plug 'ervandew/supertab'
 
 " Load Schemes Automatically
 Plug 'flazz/vim-colorschemes'
@@ -69,22 +71,29 @@ Plug 'evidens/vim-twig'
 " Syntax highlighting for Pug/Jade		
 Plug 'digitaltoad/vim-jade'		
 
+
+" EMMET
+Plug 'mattn/emmet-vim'
+" Note comma still needed 
+let g:user_emmet_leader_key='<leader>e'
+" JSDoc
+
 " CTags Viewer
 "Plug 'majutsushi/tagbar'
 "Plug 'xolox/vim-misc'
 "Plug 'xolox/vim-easytags'
 
-"Javascript
+" Javascript, React, React Native
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'mhartington/oceanic-next'
+Plug 'valloric/MatchTagAlways'
 
 call plug#end()
 
 " Fuzzy Finding
-nnoremap <C-p> :Files<CR>
+nnoremap <C-p> :GitFiles<CR> 
 set rtp+=/usr/local/opt/fzf
-let g:jsx_ext_required = 0 
-" let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 
 " Copying and Pasting 
 " " Copy to clipboard using star register. (use :reg to see registers) 
@@ -112,15 +121,26 @@ endif
 
 
 " Plugins:
-" w0rp/ale
-let b:ale_fixers = ['tslint', 'prettier']
-" tslint on save
-autocmd BufWritePost * !tslint % --fix
+" w0rp/ale 
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'jsx' : ['prettier', 'eslint'], 'javascript.jsx' : ['prettier', 'eslint']}
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+nnoremap <C-g> :ALEGoToDefinition<CR> 
+" autocmd BufWritePost *.ts !tslint % --fix
  
 " Plug 'mhartington/nvim-typescript'
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_debug = 1
 let g:deoplete#enable_profile = 1
+
+" Plug vim/jsx
+let g:jsx_ext_required = 0
+
+" Plug valloric/MatchTagAlways
+let g:mta_filetypes = {'javascript.jsx' : 1}
+
+" Plug emmet/vim
+let g:user_emmet_leader_key='<C-E>'
 
 " [ Preferences ] {{{1
 let mapleader = " "                    " Set global mapleader to space
@@ -173,8 +193,14 @@ set cursorline                        " Highlight current line
 set laststatus=2                      " Always show the statusline
 set t_Co=256                          " Explicitly tell Vim that the terminal supports 256 colors
 " Colors and Theme {{{2
-set background=dark
-colorscheme badwolf
+" " For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+colorscheme BadWolf
 " [ Auto Commands ] {{{1
 " Auto source vimrc on save {{{2
 augroup reload_vimrc " {
@@ -409,8 +435,6 @@ let g:EasyMotion_leader_key = ','
 hi EasyMotionTarget ctermbg=none ctermfg=DarkRed
 " hi EasyMotionShade  ctermbg=none ctermfg=DarkGray
 
-" Emmet {{{2
-let g:user_emmet_leader_key = '<c-e>'
 "Fugitive Git {{{2
 nmap <leader>ga :Git add -A<CR>
 nmap <leader>gc :Gcommit -a<CR>
@@ -436,15 +460,7 @@ map <leader>n :NERDTreeToggle<CR>
 " Airline  {{{2
 " comment line below to run on Ubuntu
 let g:airline#extensions#tabline#enabled = 1
-" Syntastic {{{2
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_python_python_exec = '/Library/Frameworks/Python.framework/Versions/3.6/bin/python3' 
-" nmap <leader>st :SyntasticToggleMode<cr>
-" nmap <leader>sc :SyntasticCheck<cr>
-" let g:syntastic_mode_map = {"mode" : "passive", 'passive_filetypes': ['java','cpp', 'py', 'html']}
-" let g:jsx_ext_required = 1
-" let g:syntastic_javascript_checkers = ['eslint']
+
 " Toggle errors
 " Tabularize {{{2
 if exists(":Tabularize")
@@ -458,6 +474,8 @@ endif
 
 " JsDoc {{{2
 nmap <silent> <leader>js <Plug>(jsdoc)
+" From pangloss/vim-javascript plugin
+let g:javascript_plugin_jsdoc = 1
 " Git Gutter {{{2
 let g:gitgutter_enabled = 0
 let g:gitgutter_highlight_lines = 1
@@ -474,6 +492,7 @@ set modelines=1
 " map <F8> :w <CR> :!gcc -std=c++1y % -o %< && ./%< <CR>
 map <F9> :w <CR> :!cc % -o %< && ./%< <CR>
 	set shell=bash\ -i		
+
 " [ Project Specific VIMRC ] {{{1		
 set exrc		
 " }}
