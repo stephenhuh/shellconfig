@@ -5,3 +5,4 @@
 3. `$brew install tree`
 4. `brew install the_silver_searcher`
 5. `brew install nmap`
+6. `brew install watch` 
