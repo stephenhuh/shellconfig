@@ -24,6 +24,7 @@ tmux matches VIM keys
   8. Set vim as default git editor.
     $ git config --global core.editor `which vim`
   9. Make sure neovim works properly by running `:checkhealth` in nv
+   
 
 ## Other
 1. download powerline fonts from https://github.com/powerline/fonts for perfect aligning and better reading
