@@ -3,7 +3,7 @@
 export PATH=$PATH:/usr/local/bin:~/gitrepos/private-snippets/scriptz:~/anaconda3/bin
 plugins=(vi-mode web-search tmux wd docker)
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/steviejay/.oh-my-zsh
+export ZSH=/Users/huhstevie/.oh-my-zsh
 export shell=/bin/zsh
 
 

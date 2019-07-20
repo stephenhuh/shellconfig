@@ -1,0 +1,13 @@
+" Force quit that bitch
+nmap fq :q!<CR>
+inoremap jk <ESC>
+
+set hidden                             " Useful for auto setting hidden buffers
+
+nmap <leader>T :enew<cr> 
+" Move between buffer (Prefer default mappings)
+nmap <leader>l :bnext<CR>"
+nmap <leader>h :bprevious<CR>
+" Show all open buffers
+nmap <leader>bl :ls<CR>
+
