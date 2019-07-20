@@ -6,6 +6,14 @@ shellconfig to set your vim, vimrc, bash, bashrc, or other similar files quickly
 Ability to click on tmux panes.
 tmux matches VIM keys
 
+# Rationale
+For anyone that questions why this setup.
+1. it forces you to learn lower level UNIX (see reason 2)
+2. NOTHING is magic if you stick with the setup for long enough. you learn how to create your own autocomplete, your own go-to, etc. (this is prolly the biggest reason)
+3. fastest by far.
+4. far and wide compatibility -- can learn to be a sysadmin, a js-dev, a c-dev, a go-lang dev, a devops person, IT guy, etc.
+5. just simpler and easier.
+
 # Installation
 
 	1. Use iTerm2 (https://www.iterm2.com/)
