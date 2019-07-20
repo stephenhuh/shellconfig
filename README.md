@@ -15,7 +15,6 @@ For anyone that questions why this setup.
 5. just simpler and easier.
 
 # Installation
-
 	1. Use iTerm2 (https://www.iterm2.com/)
 	2. Download vim-plug
 	3. Clone this repo into ~/.vim
@@ -153,3 +152,17 @@ Goal is to emulate personal vim setup but use Webstorm's best features e.g. auto
 - Use :e to abuse buffers.
 - Shift-Shift is the way to go for CTRL-P like emulation
 
+# General Apps for Development
+## Multiple Browsers:
+- Chrome Canary
+- Firefox Developer Edition
+
+## Programming Specific
+- Sublime Text (for others to use)
+- Bartender 3 - Clean Bars
+- Alfred - Better Spotlight
+- GPG Tools (https://gpgtools.org/) - so secure
+- Dash - Offline Documentation
+- JetBrains: Webstorm, C/C++ Lion, GoLand
+
+- TorBrowser
