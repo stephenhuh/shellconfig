@@ -139,5 +139,9 @@ iTERM HOTKEYS TO REMEMBER
 * CMD + Arrows -> move between tabs
 
 #Webstorm Config
-Peacocks in Space theme
-Inconsolata for Powerline size 16 line spacing 1.4
+Goal is to emulate personal vim setup but use Webstorm's best features e.g. autocomplete and go-to :(
+- Use IDEAVIM, there should be a .rc file in this repo for this purpose.
+- Use TMUX in the Terminal tab in Webstorm, should respond well with ZSH and everything already setup.
+- Use :e to abuse buffers.
+- Shift-Shift is the way to go for CTRL-P like emulation
+
