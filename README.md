@@ -29,19 +29,19 @@ However, there is a strong case to be made for easy setups that get you up and r
 	5. Get Homebrew at brew.sh
 	6. Get tmux 
 		$ brew install tmux
-  7. Get dracula theme for ITERM2
-    $ git clone https://github.com/dracula/iterm.git
-  8. Set vim as default git editor.
-    $ git config --global core.editor `which vim`
-  9. Make sure neovim works properly by running `:checkhealth` in nv
+  	7. Get dracula theme for ITERM2
+    		$ git clone https://github.com/dracula/iterm.git
+  	8. Set vim as default git editor.
+    		$ git config --global core.editor `which vim`
+  	9. Make sure neovim works properly by running `:checkhealth` in nv
    
 
 ## Other
-1. download powerline fonts from https://github.com/powerline/fonts for perfect aligning and better reading
-2. set iTerm2 non-ascii fonts to inconsolata for powerline at 12pt
-3. set iTerm2 ascii font to hack 12 pt (preferred)
-4. run some package manager install on tmux for that
-5. use [pocket-snippets file](pocket-snippets.md) for my own snippets 
+	1. download powerline fonts from https://github.com/powerline/fonts for perfect aligning and better reading
+	2. set iTerm2 non-ascii fonts to inconsolata for powerline at 12pt
+	3. set iTerm2 ascii font to hack 12 pt (preferred)
+	4. run some package manager install on tmux for that
+	5. use [pocket-snippets file](pocket-snippets.md) for my own snippets 
 
 # Update
 	1. git clone vundle first
