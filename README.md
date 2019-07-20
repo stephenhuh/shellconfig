@@ -14,6 +14,8 @@ For anyone that questions why this setup.
 4. far and wide compatibility -- can learn to be a sysadmin, a js-dev, a c-dev, a go-lang dev, a devops person, IT guy, etc.
 5. just simpler and easier.
 
+However, there is a strong case to be made for easy setups that get you up and running in minutes and in autocompletion VIM still can't seem to compete. Try to learn the newer IDEs and fold back learnings into this repo to get the best of both worlds. VIM can usually match up to IDEs but IDEs can rarely match up to VIM in terms of speed + compatibility.
+
 # Installation
 
 	1. Use iTerm2 (https://www.iterm2.com/)
