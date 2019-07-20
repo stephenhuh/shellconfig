@@ -164,8 +164,18 @@ Goal is to emulate personal vim setup but use Webstorm's best features e.g. auto
 - Sublime Text (for others to use)
 - Bartender 3 - Clean Bars
 - Alfred - Better Spotlight
-- GPG Tools (https://gpgtools.org/) - so secure
 - Dash - Offline Documentation
 - JetBrains: Webstorm, C/C++ Lion, GoLand
+- Transmit (FTP & SFTP)
+- XCode - its going to happen sooner or later
 
+## Security
+- GPG Tools (https://gpgtools.org/) - so secure
 - TorBrowser
+- Magnet
+
+## Other
+- Textual - IRC
+- DeskScribble - lifesaver during online presentations 
+- Adobe CC - ur not just a programmer
+
