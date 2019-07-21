@@ -1,0 +1,22 @@
+{
+  "name": "shellconfig",
+  "version": "1.0.0",
+  "description": "Use this shellconfig and this `README` to setup your `vim`, `bash`, `tmux`, `zsh`, `local/bin` and other core functionality for development + life quickly - mainly tested on OSX.",
+  "main": "index.js",
+  "scripts": {
+    "test": "bats install.bats"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenhuh/shellconfig.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephenhuh/shellconfig/issues"
+  },
+  "homepage": "https://github.com/stephenhuh/shellconfig#readme",
+  "devDependencies": {
+    "bats": "^1.1.0"
+  }
+}

@@ -1,4 +1,5 @@
-#/bin/bash -xe
+#!/usr/bin/env bash -xe
+
 # Setup Variables
 DEST_NEOVIM_DIRECTORY=~/.config/nvim
 NEOVIM_CONFIGURATION=init.vim
