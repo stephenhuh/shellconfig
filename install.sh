@@ -1,6 +1,6 @@
 #/bin/bash -xe
 # Setup Variables
-DEST_NEOVIM_DIRECTORY=~/.config
+DEST_NEOVIM_DIRECTORY=~/.config/nvim
 NEOVIM_CONFIGURATION=init.vim
 SOURCE_DIRECTORY=~/.vim/shellconfig
 
@@ -125,7 +125,7 @@ while true; do
   fi
   if [[ $wants_neovim_config =~ Y|y|yes ]]; then
     echo "Configuring NeoVim"
-    mkdir -p $DEST_NEOVIM_DIRECTORY && cp $SOURCE_DIRECTORY/$NEOVIM_CONFIGURATION $DEST_NEOVIM_DIRECTORY
+    mkdir -p $DEST_NEOVIM_DIRECTORY && ln -sf $SOURCE_DIRECTORY/$NEOVIM_CONFIGURATION $DEST_NEOVIM_DIRECTORY
     break
   elif [[ $wants_neovim_config =~ N|n ]]; then
     echo "Skipping Neovim Configuration";
@@ -175,7 +175,7 @@ while true; do
 			echo "";;
 	esac
 	echo "We're done with bashrc"
-	sleep 3
+	sleep 1
 done
 printf "\n\n\n\n"
 asciibye
