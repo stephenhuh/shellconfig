@@ -115,7 +115,7 @@ while true; do
 	sleep 1
 done
 
-# NeoVim Stuff
+# NeoVim
 while true; do
   echo "Do you want to install the vim configurations for NeoVim?" 
   read wants_neovim_config
@@ -134,6 +134,8 @@ while true; do
     echo "Please answer with a valid answer: Y|n or N|n"
   fi
 done
+
+# TMUX
 while true; do
 	read -p "Do you want to install tmux.conf y or n? " yn
 	case $yn in
@@ -148,6 +150,8 @@ while true; do
 	echo "We're done with tmux.conf"
 	sleep 1
 done
+
+# ZSH
 while true; do
 	read -p "Do you want to install zshrc y or n? " yn
 	case $yn in
@@ -162,6 +166,8 @@ while true; do
 	echo "We're done with zshrc"
 	sleep 1
 done
+
+# GNOME terminal w/ TMUX
 while true; do
 	echo "We're going to add a tmux alias to your bashrc if you're on a GNOME terminal"
 	read -p "Are you on an GNOME Terminal right now? y or n? " yn
