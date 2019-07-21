@@ -1,4 +1,4 @@
-#/bi/bash -xe
+#/bin/bash -xe
 clear
 asciiwelcome() {
 cat << "EOT"
@@ -89,8 +89,8 @@ EOT
 
 
 asciiwelcome
-echo "Well congrats on taking the big step into my .ViM config!"
-echo ""
+echo "Well congrats on taking the big step into my .vim config!"
+echo "Before using this make sure your shellconfig repository is in ~/.vim"
 echo "If you want to keep your .vimrc then back that shit up!"
 echo ""
 while true; do
