@@ -53,6 +53,53 @@ However, there is a strong case to be made for easy setups that get you up and r
 		set iTerm2 ascii font to hack 12 pt (preferred)
 	
 	4. If powerline is incompatible with your shell comment out powerline font lines as written in the vimrc (GNOME in particular)
+	
+# HomeBrew packages
+## This is a list of formulae you should have on OSX
+1. `$brew install pidof`
+2. `$brew install ngrok` 
+3. `$brew install tree`
+4. `brew install the_silver_searcher`
+5. `brew install nmap`
+6. `brew install watch` 
+
+See below for GNU stuff
+
+## Making Your Operating System more GNU Like
+See: [Stack Exchange Link] (https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities#comment211805_69223) for more info.
+
+```
+  0. brew install coreutils
+  1. brew install findutils
+  2. brew install binutils
+  3. brew install gnu-tar
+  4. brew install gnu-sed
+  5. brew install gawk
+  6. brew install gnutls
+  7. brew install gnu-indent
+  8. brew install gnu-getopt
+  9. brew install grep
+  10. brew install gnu-which
+  11. brew install wdiff
+  12. brew install wget
+  13. brew install gdb
+  14. brew install diffutils 
+
+  Or just install them all at once with `brew install <formula1> <formula2> <formula3> ...`
+
+  $brew search gnu - for other packages
+```
+
+Note that these utilites are all prefixed with g to avoid collision. To use without the 'g' add *gnubin* along with respective *gnuman pages* to path. This is, however *NOT RECOMMENDED* and may cause pain in the future, it is suggest to just use the 'g' prefix when GNU behavior is desired.
+
+```
+  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+```
+
+For more info just search through the info on the tools:
+* `$brew info coreutils` - brew stuff
+* `$info coreutils` - use gnu info for deeper dives into gnu utilities
 
 ## My Selected Tools
 #### Texteditor: VIM
@@ -176,50 +223,3 @@ Goal is to emulate personal vim setup but use Webstorm's best features e.g. auto
 - DeskScribble - lifesaver during online presentations 
 - Adobe CC - ur not just a programmer
 
-
-# HomeBrew packages
-## This is a list of formulae you should have on OSX
-1. `$brew install pidof`
-2. `$brew install ngrok` 
-3. `$brew install tree`
-4. `brew install the_silver_searcher`
-5. `brew install nmap`
-6. `brew install watch` 
-
-See below for GNU stuff
-
-## Making Your Operating System more GNU Like
-See: [Stack Exchange Link] (https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities#comment211805_69223) for more info.
-
-```
-  0. brew install coreutils
-  1. brew install findutils
-  2. brew install binutils
-  3. brew install gnu-tar
-  4. brew install gnu-sed
-  5. brew install gawk
-  6. brew install gnutls
-  7. brew install gnu-indent
-  8. brew install gnu-getopt
-  9. brew install grep
-  10. brew install gnu-which
-  11. brew install wdiff
-  12. brew install wget
-  13. brew install gdb
-  14. brew install diffutils 
-
-  Or just install them all at once with `brew install <formula1> <formula2> <formula3> ...`
-
-  $brew search gnu - for other packages
-```
-
-Note that these utilites are all prefixed with g to avoid collision. To use without the 'g' add *gnubin* along with respective *gnuman pages* to path. This is, however *NOT RECOMMENDED* and may cause pain in the future, it is suggest to just use the 'g' prefix when GNU behavior is desired.
-
-```
-  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-```
-
-For more info just search through the info on the tools:
-* `$brew info coreutils` - brew stuff
-* `$info coreutils` - use gnu info for deeper dives into gnu utilities
