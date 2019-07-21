@@ -226,4 +226,5 @@ Note that these utilites are all prefixed with g to avoid collision. To use with
 ```
 
 For more info just search through the info on the tools:
-`$brew info coreutils`
+* `$brew info coreutils` - brew stuff
+* `$info coreutils` - gnu stuff
