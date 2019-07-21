@@ -1,4 +1,8 @@
-#SCSS
+# vim-snippets blobs
+## Intro
+All code blocks here are to be imported and used with the honza/vim-snippets or a plugin that adapts to the same API
+
+## SCSS
 comment blocks for following [idiomatic css](https://github.com/necolas/idiomatic-css/)
 ```
 snippet comment1
@@ -22,7 +26,7 @@ snippet comment3
 snippet comment4
 	/* ${0:Basic comment} */
 ```
-#Markdown
+## Markdown
 ```
 snippet c
 	\`\`\`

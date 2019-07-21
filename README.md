@@ -1,7 +1,8 @@
 [![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg)](https://www.youtube.com/watch?v=9auOCbH5Ns4)
+[![](https://img.shields.io/badge/stevie.sh-approved-success.svg)](http://stevie.sh)
 # PURPOSE 
-Use stephenhuh's (forked from zjrosen)
-shellconfig to set your vim, vimrc, bash, bashrc, or other similar files quickly.
+Use stephenhuh's (forked from zjrosen aka unicorn)
+shellconfig to set your vim, vimrc, bash, bashrc, or other similar files quickly - mainly for OSX
 
 Ability to click on tmux panes.
 tmux matches VIM keys
@@ -60,18 +61,18 @@ However, there is a strong case to be made for easy setups that get you up and r
 
 ## My Selected Tools
 #### Texteditor: VIM
-oh-my-zsh - apple theme
-iTerm2
-TMUX
-koala for sass
+* oh-my-zsh - apple theme
+* iTerm2
+* TMUX
+* koala for sass
 
 ## Need Moar Plugins
 See vim-plug repo.
 
-### NOTES:
-Made for Badwolf colorscheme
-can use flazz/vim-colorschemes to alter colorschemes
-For GNOME shells get rid of powerline, use airline, then alias as allowed in installscript
+### On Colors:
+* Made for Badwolf colorscheme -- colorschemes really don't matter in the end - but get em all lol
+* can use flazz/vim-colorschemes to alter colorschemes and download em all at once.
+* For GNOME shells get rid of powerline, use airline, then alias as shown in `install.sh`
 
 VIM HOTKEYS TO REMEMBER
 ---
@@ -93,7 +94,7 @@ VIM HOTKEYS TO REMEMBER
 * gD, gd, g*, g# for go-to like functionality
 
 
-##Sick Vim-specific things
+## Wicked Vim-specific things
 
 ```
 autocmd BufWritePost * !./build.sh #set up commands to run upon writing
@@ -182,10 +183,47 @@ Goal is to emulate personal vim setup but use Webstorm's best features e.g. auto
 
 
 # HomeBrew packages
-## This is a list of scripts you should have on OSX
+## This is a list of formulae you should have on OSX
 1. `$brew install pidof`
 2. `$brew install ngrok` 
 3. `$brew install tree`
 4. `brew install the_silver_searcher`
 5. `brew install nmap`
 6. `brew install watch` 
+
+See below for GNU stuff
+
+## Making Your Operating System more GNU Like
+See: [Stack Exchange Link] (https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities#comment211805_69223) for more info.
+
+```
+  0. brew install coreutils
+  1. brew install findutils
+  2. brew install binutils
+  3. brew install gnu-tar
+  4. brew install gnu-sed
+  5. brew install gawk
+  6. brew install gnutls
+  7. brew install gnu-indent
+  8. brew install gnu-getopt
+  9. brew install grep
+  10. brew install gnu-which
+  11. brew install wdiff
+  12. brew install wget
+  13. brew install gdb
+  14. brew install diffutils 
+
+  Or just install them all at once with `brew install <formula1> <formula2> <formula3> ...`
+
+  $brew search gnu - for other packages
+```
+
+Note that these utilites are all prefixed with g to avoid collision. To use without the 'g' add *gnubin* along with respective *gnuman pages* to path. This is, however *NOT RECOMMENDED* and may cause pain in the future, it is suggest to just use the 'g' prefix when GNU behavior is desired.
+
+```
+  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+```
+
+For more info just search through the info on the tools:
+`$brew info coreutils`
