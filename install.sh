@@ -129,7 +129,7 @@ while true; do
 		[Yy]* ) 
 			ln -sf ~/.vim/shellconfig/zshrc ~/.zshrc ;
 			break;;
-		[Nn]* ) echo "Done with tmux.conf";
+		[Nn]* ) echo "Done with zshrc";
 			break;;
 		* ) echo "Please answer yes or no.";
 			echo "";;
@@ -138,13 +138,13 @@ while true; do
 	sleep 1
 done
 while true; do
-	echo "We're going to add a tmux alias to you're bashrc if you're on a GNOME terminal"
-	read -p "Are you on an GNOME Terminal y or n? " yn
+	echo "We're going to add a tmux alias to your bashrc if you're on a GNOME terminal"
+	read -p "Are you on an GNOME Terminal right now? y or n? " yn
 	case $yn in
 		[Yy]* ) 
 			cat ~/.vim/shellconfig/bashrc >> ~/.bashrc
 			break;;
-		[Nn]* ) echo "Done with tmux.conf";
+		[Nn]* ) echo "Done with bash configs for GNOME terminals";
 			break;;
 		* ) echo "Please answer yes or no.";
 			echo "";;

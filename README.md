@@ -33,29 +33,21 @@ However, there is a strong case to be made for easy setups that get you up and r
 
 ## Other
 **Fonts Resources**: [fonts] (fonts/)
-
-	1. download powerline fonts from https://github.com/powerline/fonts for perfect aligning and better reading
-	2. set iTerm2 non-ascii fonts to Inconsolata for Powerline at 12pt 
-	3. set iTerm2 ascii font to hack 12 pt 
-	4. run some package manager install on tmux for that
-	5. load up custom [snippets] (snippets.md) for my own snippets 
-  6. (optional) If you want font ligatures use FiraCode - personally, they make programming a lil more confusing but I see the value if it's for more quantitative or math oriented languages
+	1. set iTerm2 non-ascii fonts to Inconsolata for Powerline at 12pt 
+	2. set iTerm2 ascii font to hack 12 pt 
+	3. run some package manager install on tmux for that
+	4. load up custom [snippets] (snippets.md) for my own snippets 
+  5. (optional) If you want font ligatures use FiraCode - personally, they make programming a lil more confusing but I see the value if it's for more quantitative or math oriented languages - plus they dont work well with vim + neovim yet
+  6. (optional) - otherline powerline fonts can be found at [https://github.com/powerline/fonts] (https://github.com/powerline/fonts)
 
 # Update
 	1. git clone vundle first
 		$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-	2. Run install script
+	2. Run install script - it updates too!
 		$ cd ~/.vim
 		$ ./install.sh
 
-	3. If you need powerline fonts
-		download powerline fonts from https://github.com/powerline/fonts
-		set iTerm2 non-ascii fonts to inconsolata for powerline at 12pt
-		set iTerm2 ascii font to hack 12 pt (preferred)
-	
-	4. If powerline is incompatible with your shell comment out powerline font lines as written in the vimrc (GNOME in particular)
-	
 # HomeBrew packages
 ## This is a list of formulae you should have on OSX
 1. `$brew install pidof`
