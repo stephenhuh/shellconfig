@@ -19,8 +19,16 @@ nnoremap D d$
 """"
 " JetBrains Stuff
 """"
+"" Shortcuts & Actions
 " JetBrains Go-To-Declaration
 nnoremap gd :action GotoDeclaration
+
+
+"" Plugins below come with IdeaVIM
 " Enable tpope/vim-surround
 set surround
+" Enable tpope/commentary
+set commentary
+" Enable terryma/vim-multiple-cursors
+set multiple-cursors
 
