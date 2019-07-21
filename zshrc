@@ -116,3 +116,13 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # also source bash
 source ~/.bash_profile
+
+####
+## BCG DV
+####
+# set named directory for egnyte
+e=~/Egnyte/Private/stevie.huh/
+: ~e
+
+
+export

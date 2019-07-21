@@ -197,9 +197,6 @@ nmap _j vipJV"+yu										" For a SO question i answered, joins lines and copie
 " like gv but for pasted text
 " nnoremap <leader>v V`]
 
-" Not sure about this one quite yet
-" nnoremap ; :
-
 " :Wrap to wrap lines command! -nargs=* Wrap set wrap linebreak nolist
 
 " Visual Selection {{{2

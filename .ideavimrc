@@ -10,4 +10,17 @@ nmap <leader>l :bnext<CR>"
 nmap <leader>h :bprevious<CR>
 " Show all open buffers
 nmap <leader>bl :ls<CR>
+" Yank to end of line with Y
+nnoremap Y y$												
+" Delete to end of line with D
+nnoremap D d$											
+
+
+""""
+" JetBrains Stuff
+""""
+" JetBrains Go-To-Declaration
+nnoremap gd :action GotoDeclaration
+" Enable tpope/vim-surround
+set surround
 
