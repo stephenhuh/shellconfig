@@ -89,7 +89,9 @@ VIM HOTKEYS TO REMEMBER
 * use ctrl+w + o or s for new window splits
 * "*y "*p to copy and paste to and from clipboard
 * use visual mode scrolling to copy and paste
+* `:reg` the killer register feature
 * gD, gd, g*, g# for go-to like functionality
+
 
 ##Sick Vim-specific things
 
@@ -98,8 +100,7 @@ autocmd BufWritePost * !./build.sh #set up commands to run upon writing
 autocmd! #clear autocmds
 ```
 
-nerd tree can be used to make nodes with m+c or m+<?>
-=======
+* nerd tree can be used to make nodes with m+c or m+<?>
 * jhkl -> navigation
 * e,b E,B -> faster navigation
 * dont use arrowkeys
@@ -148,10 +149,10 @@ iTERM HOTKEYS TO REMEMBER
 * CMD + / -> Find Cursor
 * CMD + Arrows -> move between tabs
 
-#Webstorm Config
+# Webstorm Config
 Goal is to emulate personal vim setup but use Webstorm's best features e.g. autocomplete and go-to :(
 - Use IDEAVIM, there should be a .rc file in this repo for this purpose.
-- Use TMUX in the Terminal tab in Webstorm, should respond well with ZSH and everything already setup.
+- Use TMUX in the Terminal tab in Webstorm, should respond well in JetBrains software with ZSH and everything already setup if all other steps were finished.
 - Use :e to abuse buffers.
 - Shift-Shift is the way to go for CTRL-P like emulation
 
@@ -179,3 +180,12 @@ Goal is to emulate personal vim setup but use Webstorm's best features e.g. auto
 - DeskScribble - lifesaver during online presentations 
 - Adobe CC - ur not just a programmer
 
+
+# HomeBrew packages
+## This is a list of scripts you should have on OSX
+1. `$brew install pidof`
+2. `$brew install ngrok` 
+3. `$brew install tree`
+4. `brew install the_silver_searcher`
+5. `brew install nmap`
+6. `brew install watch` 
