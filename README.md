@@ -1,4 +1,3 @@
-
 # PURPOSE [![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg)](https://www.youtube.com/watch?v=9auOCbH5Ns4) [![](https://img.shields.io/badge/stevie.sh-approved-success.svg)](http://stevie.sh) ![](https://img.shields.io/badge/hours%20saved-1000s-blue.svg)
 Use this shellconfig and this `README` to setup your `vim`, `bash`, `tmux`, `zsh`, `local/bin` and other core functionality for development + life quickly - mainly tested on OSX.
 
@@ -25,19 +24,21 @@ However, there is a strong case to be made for easy setups that get you up and r
 	5. Get Homebrew at brew.sh
 	6. Get tmux 
 		$ brew install tmux
-  	7. Get dracula theme for ITERM2
-    		$ git clone https://github.com/dracula/iterm.git
-  	8. Set vim as default git editor.
-    		$ git config --global core.editor `which vim`
-  	9. Make sure neovim works properly by running `:checkhealth` in nv
+  7. Get dracula theme for ITERM2
+      $ git clone https://github.com/dracula/iterm.git
+  8. Set vim as default git editor.
+      $ git config --global core.editor `which vim`
+  9. Make sure neovim works properly by running `:checkhealth` in nv
    
 
 ## Other
+Fonts Directory: [fonts] (fonts/)
+
 	1. download powerline fonts from https://github.com/powerline/fonts for perfect aligning and better reading
-	2. set iTerm2 non-ascii fonts to inconsolata for powerline at 12pt
-	3. set iTerm2 ascii font to hack 12 pt (preferred)
+	2. set iTerm2 non-ascii fonts to Inconsolata for Powerline at 12pt (see fonts directory README and files to download)
+	3. set iTerm2 ascii font to hack 12 pt (see fonts directory README and files to download
 	4. run some package manager install on tmux for that
-	5. use [pocket-snippets file](pocket-snippets.md) for my own snippets 
+	5. load up custom [snippets] (snippets.md) for my own snippets 
 
 # Update
 	1. git clone vundle first
