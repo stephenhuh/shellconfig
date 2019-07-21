@@ -1,11 +1,6 @@
-[![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg)](https://www.youtube.com/watch?v=9auOCbH5Ns4)
-[![](https://img.shields.io/badge/stevie.sh-approved-success.svg)](http://stevie.sh)
-# PURPOSE 
-Use stephenhuh's (forked from zjrosen aka unicorn)
-shellconfig to set your vim, vimrc, bash, bashrc, or other similar files quickly - mainly for OSX
 
-Ability to click on tmux panes.
-tmux matches VIM keys
+# PURPOSE [![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg)](https://www.youtube.com/watch?v=9auOCbH5Ns4) [![](https://img.shields.io/badge/stevie.sh-approved-success.svg)](http://stevie.sh) ![](https://img.shields.io/badge/hours%20saved-1000s-blue.svg)
+Use this shellconfig and this `README` to setup your `vim`, `bash`, `tmux`, `zsh`, `local/bin` and other core functionality for development + life quickly - mainly tested on OSX.
 
 # Rationale
 For anyone that questions why this setup.
