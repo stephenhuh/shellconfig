@@ -12,7 +12,7 @@
 " Paths
 let g:node_host_prog = '/usr/local/bin/neovim-node-host'
 let g:python2_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/Users/steviejay/anaconda3/bin/python3'
+let g:python3_host_prog = '/Users/huhstevie/miniconda3/bin/python'
 
 " Start plugins:
 call plug#begin('~/.config/nvim/plugged')
@@ -34,7 +34,7 @@ Plug 'mhartington/nvim-typescript',       { 'do': './install.sh' }
 Plug 'posva/vim-vue'
 
 " Fuzzy Finder
-Plug '/usr/local/opt/fzf'
+Plug '/usr/local/bin/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Delimiter - Close Quotes, Brackets, Etc
