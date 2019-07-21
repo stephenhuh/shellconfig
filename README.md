@@ -32,13 +32,14 @@ However, there is a strong case to be made for easy setups that get you up and r
    
 
 ## Other
-Fonts Directory: [fonts] (fonts/)
+**Fonts Resources**: [fonts] (fonts/)
 
 	1. download powerline fonts from https://github.com/powerline/fonts for perfect aligning and better reading
-	2. set iTerm2 non-ascii fonts to Inconsolata for Powerline at 12pt (see fonts directory README and files to download)
-	3. set iTerm2 ascii font to hack 12 pt (see fonts directory README and files to download
+	2. set iTerm2 non-ascii fonts to Inconsolata for Powerline at 12pt 
+	3. set iTerm2 ascii font to hack 12 pt 
 	4. run some package manager install on tmux for that
 	5. load up custom [snippets] (snippets.md) for my own snippets 
+  6. (optional) If you want font ligatures use FiraCode - personally, they make programming a lil more confusing but I see the value if it's for more quantitative or math oriented languages
 
 # Update
 	1. git clone vundle first
