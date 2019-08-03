@@ -95,23 +95,17 @@ For more info just search through the info on the tools:
 * `$brew info coreutils` - brew stuff
 * `$info coreutils` - use gnu info for deeper dives into gnu utilities
 
-## My Selected Tools
-#### Texteditor: VIM
-* oh-my-zsh - apple theme
-* iTerm2
-* TMUX
-* koala for sass
+# On VIM and variants
+## Core Most Important Features
 
-## Need Moar Plugins
-See vim-plug repo.
+1. Snippets
+2. Autocomplete + Autosuggest
+3. Linting
+4. Go-To
 
-### On Colors:
-* Made for Badwolf colorscheme -- colorschemes really don't matter in the end - but get em all lol
-* can use flazz/vim-colorschemes to alter colorschemes and download em all at once.
-* For GNOME shells get rid of powerline, use airline, then alias as shown in `install.sh`
-
-VIM HOTKEYS TO REMEMBER
+## Hotkeys 
 ---
+
 * note that vim is enabled for zsh
 * use w, b, e, ge to move back and forth.
 * no arrow keys to navigate
@@ -129,8 +123,8 @@ VIM HOTKEYS TO REMEMBER
 * `:reg` the killer register feature
 * gD, gd, g*, g# for go-to like functionality
 
-
 ## Wicked Vim-specific things
+---
 
 ```
 autocmd BufWritePost * !./build.sh #set up commands to run upon writing
@@ -161,6 +155,23 @@ autocmd! #clear autocmds
 * f<?>, F<?> skip to ? char - forward and backwards
 * cw -> change word at cursor
 * ciw -> change full word 
+
+
+## My Selected Tools
+#### Texteditor: VIM
+* oh-my-zsh - apple theme
+* iTerm2
+* TMUX
+* koala for sass
+
+## Need Moar Plugins
+See vim-plug repo.
+
+### On Colors:
+* Made for Badwolf colorscheme -- colorschemes really don't matter in the end - but get em all lol
+* can use flazz/vim-colorschemes to alter colorschemes and download em all at once.
+* For GNOME shells get rid of powerline, use airline, then alias as shown in `install.sh`
+
 
 TMUX HOTKEYS TO REMEMBER
 ---
