@@ -97,6 +97,7 @@ alias ctags="/usr/local/Cellar/ctags/5.8_1/bin/ctags"
 alias initdb="/usr/local/Cellar/postgresql/9.6.5/bin/initdb"
 alias aws="python3 -m awscli"
 alias nv="nvim"
+alias blender="/Applications/Blender.app/Contents/MacOS/Blender"
 
 # Fuzzy Finder
 ## Use ripgrep, show files, search hidden files, follow symlinks, ignore .git files
@@ -124,5 +125,4 @@ source ~/.bash_profile
 e=~/Egnyte/Private/stevie.huh/
 : ~e
 
-
-export
+export PATH="/usr/local/sbin:$PATH"

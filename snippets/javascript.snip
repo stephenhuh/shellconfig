@@ -24,7 +24,6 @@ options head
     ${0:TARGET}
   };
 
-
 snippet f
 options word
   function(${1}) { ${0:TARGET} };
@@ -202,4 +201,24 @@ snippet     import-default-member
 abbr        import defaultMember, { member, ... } from "module-name";
 options     head
   import ${1:defaultMember}, { ${2:MEMBERS} } from "${0:TARGET}";
+
+# Custom React SH
+
+snippet ir
+options head
+  import React from 'react';
+
+snippet export
+options export
+  export { ${1:MEMBERS} }
+
+snippet ed
+options head
+  export default ${1:EXPORT}
+
+snippet sd
+options head
+  import styled from 'styled-components/macro';
+
+
 

@@ -184,6 +184,7 @@ while true; do
 	echo "We're done with bashrc"
 	sleep 1
 done
+
 printf "\n\n\n\n"
 asciibye
 printf "\n\n\n\n"
