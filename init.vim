@@ -3,27 +3,11 @@
 " | Email: stephenhuh@gmail.com |
 " | Neovim config               |
 " |-----------------------------|
-"
-"
-"""""""
-" Notes:
-" Organize by feature
-"
-"""""""
 
-""""
-" Variables for configuration
-"""
-
-
-
-""""""""
 " Plugin Manager:
 " Note: Any plugin that can be largely replicated using core vim DO NOT
 " INSTALL. Aim to sharpen the saw, not just add to it.
 " Auto-install vim-plug
-""""""
-
 
 " Paths
 let g:node_host_prog = '/usr/local/bin/neovim-node-host'
@@ -33,74 +17,18 @@ let g:python3_host_prog = '/Users/huhstevie/miniconda3/bin/python'
 " Start plugins:
 call plug#begin('~/.config/nvim/plugged')
 
-"""
 " Linting
-"""
-
-" Async Linting
 Plug 'w0rp/ale'
 
-"""
-
 " Autocomplete
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-"""
-" Snippets
-"""
-
-" Snippet Plugin
-Plug 'Shougo/neosnippet.vim'
-" Snippets
-Plug 'Shougo/neosnippet-snippets'
-
-" Extra Snippets directory
-" " Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory='~/.vim/shellconfig/snippets'
-
-" Update snipets -- sc {{{2
-nmap <leader>sc :tabedit ~/.vim/config/vim-snippets/snippets<CR>
-
-" Config
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-"""
-" End Snippets
-"""
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " HTML/Others (Many)
 Plug 'Shougo/neco-syntax'
 
 " Typescript
-Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript',       { 'do': './install.sh' }
-
-let g:yats_host_keyword = 1
-set re=1
 
 " Vue
 Plug 'posva/vim-vue'
@@ -135,18 +63,14 @@ Plug 'terryma/vim-multiple-cursors'
 " Load Schemes Automatically
 Plug 'flazz/vim-colorschemes'
 
+" Sick Snippets - See Customs within Shellconfig
+Plug 'honza/vim-snippets'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'evidens/vim-twig'
-
-" Syntax for Swift
-Plug 'keith/swift.vim'
-
 
 " Syntax highlighting for Pug/Jade		
 Plug 'digitaltoad/vim-jade'		
 
-" Syntax highlighting for styled-components
-Plug 'styled-components/vim-styled-components', { 'branch' : 'main'}
 
 " EMMET
 Plug 'mattn/emmet-vim'
@@ -164,9 +88,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'mhartington/oceanic-next'
 Plug 'valloric/MatchTagAlways'
-
-" CSV Viewer (testing this plug out)
-Plug 'mechatroner/rainbow_csv'
 
 call plug#end()
 
@@ -201,12 +122,13 @@ endif
 
 " Plugins:
 " w0rp/ale 
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'],'typescript' : ['prettier', 'eslint'], 'jsx' : ['prettier', 'eslint'], 'javascript.jsx' : ['prettier', 'eslint']}
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'jsx' : ['prettier', 'eslint'], 'javascript.jsx' : ['prettier', 'eslint']}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 nnoremap <C-g> :ALEGoToDefinition<CR> 
 " autocmd BufWritePost *.ts !tslint % --fix
  
+" Plug 'mhartington/nvim-typescript'
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_debug = 1
 let g:deoplete#enable_profile = 1
@@ -242,7 +164,7 @@ set gdefault                          " Add the g flag to search/replace by defa
 set incsearch                         " Highlight dynamically as pattern is typed
 " set hlsearch
 set ignorecase                        " Ignore case when searching
-set smartcase                         " Override :set ignorecase if pattern contains uppercase
+set smartcase                         " Try and be smart about cases
 nnoremap j gj
 nnoremap k gk
 " Appearance {{{2
@@ -279,7 +201,6 @@ if (has("termguicolors"))
 endif
 
 colorscheme BadWolf
-let g:badwolf_css_props_highlight = 1
 " [ Auto Commands ] {{{1
 " Auto source vimrc on save {{{2
 augroup reload_vimrc " {
@@ -418,6 +339,8 @@ nmap <leader>fs :w<CR>
 " Update vimrc -- v OR ev {{{2
 nmap <leader>v :tabedit $MYVIMRC<CR>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+" Update snipmate -- sc {{{2
+nmap <leader>sc :tabedit ~/.vim/bundle/vim-snippets/snippets<CR>
 " Toggle Highlighting -- h {{{2
 nmap <silent> <leader>h :set hlsearch!<CR>
 " Toggle Spell Checking -- s {{{2
@@ -434,6 +357,20 @@ nnoremap <leader>` 0v$S`
 nmap <leader>" viwS"
 " Surround selection with '
 nmap <leader>' viwS'
+" Tab Editing {{{2
+" Useful mappings for managing taps
+" map <leader>tn :tabnew<cr>
+" map <leader>to :tabonly<cr>
+" map <leader>tc :tabclose<cr>
+" map <leader>tm :tabmove<cr>
+" map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+" Buffers {{{2
+nmap <leader>T :enew<cr> 
+" Move between buffer (Prefer default mappings)
+nmap <leader>l :bnext<CR>"
+nmap <leader>h :bprevious<CR>
+" Show all open buffers
+nmap <leader>bl :ls<CR>
 
 " Extras for now {{{2
 
@@ -556,12 +493,6 @@ set modelines=1
 map <F9> :w <CR> :!cc % -o %< && ./%< <CR>
 	set shell=bash\ -i		
 
-
-" to undo awful formatting of json files
-set conceallevel=0
-
-
 " [ Project Specific VIMRC ] {{{1		
 set exrc		
 " }}
-"
