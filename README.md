@@ -132,6 +132,7 @@ autocmd! #clear autocmds
 ```
 
 * nerd tree can be used to make nodes with m+c or m+<?>
+* use :noh to undo highlighting aftere search is finished
 * jhkl -> navigation
 * e,b E,B -> faster navigation
 * dont use arrowkeys
