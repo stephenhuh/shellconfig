@@ -26,9 +26,11 @@ However, there is a strong case to be made for easy setups that get you up and r
 		$ brew install tmux
   7. Get dracula theme for ITERM2
       $ git clone https://github.com/dracula/iterm.git
-  8. Set vim as default git editor.
+  8. Download ripgrep
+    `$ brew install rg`
+  9. Set vim as default git editor.
       $ git config --global core.editor `which vim`
-  9. Make sure neovim works properly by running `:checkhealth` in nv
+  10. Make sure neovim works properly by running `:checkhealth` in nv
    
 
 ## Other

@@ -12,7 +12,7 @@
 " Paths
 let g:node_host_prog = '/usr/local/bin/neovim-node-host'
 let g:python2_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/Users/huhstevie/miniconda3/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Start plugins:
 call plug#begin('~/.config/nvim/plugged')
@@ -27,15 +27,14 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-syntax'
 
 " Typescript
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript',       { 'do': './install.sh' }
+" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'mhartington/nvim-typescript',       { 'do': './install.sh' }
 
 " Vue
 Plug 'posva/vim-vue'
 
 " Fuzzy Finder
-Plug '/usr/local/bin/fzf'
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim', { 'do' : {-> fzf#install() }}
 
 " Delimiter - Close Quotes, Brackets, Etc
 Plug 'raimondi/delimitmate'
@@ -131,7 +130,6 @@ nnoremap <C-g> :ALEGoToDefinition<CR>
 " Plug 'mhartington/nvim-typescript'
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_debug = 1
-let g:deoplete#enable_profile = 1
 
 " Plug vim/jsx
 let g:jsx_ext_required = 0
