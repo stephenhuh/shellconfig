@@ -62,6 +62,13 @@ Plug 'terryma/vim-multiple-cursors'
 " Load Schemes Automatically
 Plug 'flazz/vim-colorschemes'
 
+""" Snippet Engine
+Plug 'Sirver/ultisnips'
+" Add personal snippets directory
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "steppins"]
+" Update snippets 
+nmap <leader>sc :UltiSnipsEdit<CR>
+
 " Sick Snippets - See Customs within Shellconfig
 Plug 'honza/vim-snippets'
 Plug 'heavenshell/vim-jsdoc'
@@ -337,8 +344,6 @@ nmap <leader>fs :w<CR>
 " Update vimrc -- v OR ev {{{2
 nmap <leader>v :tabedit $MYVIMRC<CR>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
-" Update snipmate -- sc {{{2
-nmap <leader>sc :tabedit ~/.vim/bundle/vim-snippets/snippets<CR>
 " Toggle Highlighting -- h {{{2
 nmap <silent> <leader>h :set hlsearch!<CR>
 " Toggle Spell Checking -- s {{{2
@@ -423,8 +428,6 @@ vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 
 " [ Plugins ] {{{1
 " SnipMate & DelimitMate Compatibiity {{{2
-" Prevent S-Tab conflict with DelimitMate
-imap <C-d> <Plug>snipMateBack
 " vmath {{{2
 vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
@@ -445,6 +448,7 @@ let g:ctrlp_jump_to_buffer = 2 " Jump to tab AND buffer if already open
 let g:ctrlp_split_window = 1 " <CR> = New Tab
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
+nmap <C-[> :GFiles --cached --exclude-standard --others<CR> 
 " MultipleCursors {{{2
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_quit_key='<C-c>'
