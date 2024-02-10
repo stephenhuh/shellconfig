@@ -10,9 +10,8 @@
 " Auto-install vim-plug
 
 " Paths
-let g:node_host_prog = '/usr/local/bin/neovim-node-host'
 let g:python2_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = '/opt/homebrew/bin/python3'
 
 " Start plugins:
 call plug#begin('~/.config/nvim/plugged')
@@ -21,20 +20,18 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'w0rp/ale'
 
 " Autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/ddc.vim'
+Plug 'vim-denops/denops.vim'
 
 " HTML/Others (Many)
 Plug 'Shougo/neco-syntax'
-
-" Typescript
-" Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'mhartington/nvim-typescript',       { 'do': './install.sh' }
 
 " Vue
 Plug 'posva/vim-vue'
 
 " Fuzzy Finder
-Plug 'junegunn/fzf.vim', { 'do' : {-> fzf#install() }}
+Plug 'junegunn/fzf', { 'do' : {-> fzf#install() }}
+Plug 'junegunn/fzf.vim'
 
 " Delimiter - Close Quotes, Brackets, Etc
 Plug 'raimondi/delimitmate'
@@ -75,7 +72,7 @@ Plug 'heavenshell/vim-jsdoc'
 Plug 'evidens/vim-twig'
 
 " Syntax highlighting for Pug/Jade		
-Plug 'digitaltoad/vim-jade'		
+"Plug 'digitaltoad/vim-jade'		
 
 
 " EMMET
@@ -99,7 +96,7 @@ call plug#end()
 
 " Fuzzy Finding
 nnoremap <C-p> :GitFiles<CR> 
-set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/homebrew/bin/fzf
 
 " Copying and Pasting 
 " " Copy to clipboard using star register. (use :reg to see registers) 
@@ -134,10 +131,6 @@ let g:ale_completion_enabled = 1
 nnoremap <C-g> :ALEGoToDefinition<CR> 
 " autocmd BufWritePost *.ts !tslint % --fix
  
-" Plug 'mhartington/nvim-typescript'
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_debug = 1
-
 " Plug vim/jsx
 let g:jsx_ext_required = 0
 
@@ -492,8 +485,6 @@ set modelines=1
 " }}}
 " [ C/C++ ] {{{1
 " map <F8> :w <CR> :!gcc -std=c++1y % -o %< && ./%< <CR>
-map <F9> :w <CR> :!cc % -o %< && ./%< <CR>
-	set shell=bash\ -i		
 
 " [ Project Specific VIMRC ] {{{1		
 set exrc		

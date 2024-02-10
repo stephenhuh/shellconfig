@@ -1,9 +1,12 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-#export PATH=$PATH:/usr/local/bin:~/gitrepos/private-snippets/scriptz:~/anaconda3/bin
+export PATH=/opt/homebrew/Cellar/glslang/11.11.0/bin:/usr/local/bin$HOME/bin:/usr/local/bin:$HOME/.avm/bin:$HOME/bin/aptos:/usr/local/sbin:$HOME/go/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/stephenhuh/.oh-my-zsh"
+export ZSH="/Users/steviesh/.oh-my-zsh"
+
+
+autoload -U compinit
+compinit -i
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -72,7 +75,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode web-search tmux wd docker git)
+plugins=(vi-mode tmux wd docker git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,7 +110,7 @@ alias vim="nvim"
 ###
 # TMUX Configuration
 ###
-ZSH_TMUX_AUTOSTART=false
+ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
 ZSH_TMUX_AUTOSTART_ONCE=true
 
@@ -122,3 +125,32 @@ ZSH_TMUX_AUTOSTART_ONCE=true
 ###
 d=~/Desktop/
 : ~d
+g=~/gitrepos
+: ~g
+
+###
+# Load Prezto
+###
+#source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
+
+###
+#
+###
+fpath+=~/.zfunc
+
+###
+# Alias Blender
+###
+alias blender=/Applications/Blender.app/Contents/MacOS/Blender
+
+alias tf=terraform
+alias gs=/Users/steviesh/gitrepos/git-scheduler/main.sh
+
+
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
