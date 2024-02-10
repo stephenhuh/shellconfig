@@ -3,11 +3,10 @@
 " | Email: stephenhuh@gmail.com |
 " |-----------------------------|
 
-" [ Vundle Setup ]{{{1
+" [ Plugin Setup ]{{{1
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -47,6 +46,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'gabesoft/vim-ags'
 " Load Schemes Automatically
 Plugin 'flazz/vim-colorschemes'
+Plugin 'catpuccin/nvim', { 'as' : 'catpuccin' }
 
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -83,7 +83,7 @@ Plugin 'pangloss/vim-javascript'
 let g:jsx_ext_required = 0 
 "let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on
 
@@ -139,7 +139,7 @@ set laststatus=2                      " Always show the statusline
 set t_Co=256                          " Explicitly tell Vim that the terminal supports 256 colors
 " Colors and Theme {{{2
 set background=dark
-colorscheme badwolf
+colorscheme catpuccin 
 " [ Auto Commands ] {{{1
 " Auto source vimrc on save {{{2
 augroup reload_vimrc " {
