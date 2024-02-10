@@ -3,7 +3,8 @@
 # Setup Variables
 DEST_NEOVIM_DIRECTORY=~/.config/nvim
 NEOVIM_CONFIGURATION=init.vim
-SOURCE_DIRECTORY=~/.vim/shellconfig
+SOURCE_DIRECTORY=~/gitrepos/shellconfig
+CURRENT_DIRECTORY=$(pwd)
 
 clear
 asciiwelcome() {
@@ -104,7 +105,7 @@ while true; do
   read -p "Do you want to install vimrc y or n (this is for vim classic not neovim)? " yn
 	case $yn in
 		[Yy]* ) 
-			ln -sf ~/.vim/shellconfig/vimrc ~/.vimrc ;
+			ln -sf $CURRENT_DIRECTORY/vimrc ~/.vimrc ;
 			git submodule update --init ;
 			break;;
 		[Nn]* ) echo "Skipping vimrc";
@@ -141,7 +142,7 @@ while true; do
 	read -p "Do you want to install tmux.conf y or n? " yn
 	case $yn in
 		[Yy]* ) 
-			ln -sf ~/.vim/shellconfig/tmux.conf ~/.tmux.conf ;
+			ln -sf $CURRENT_DIRECTORY/tmux.conf ~/.tmux.conf ;
 			break;;
 		[Nn]* ) echo "Skipping tmux.conf";
 			break;;
@@ -157,7 +158,7 @@ while true; do
 	read -p "Do you want to install zshrc y or n? " yn
 	case $yn in
 		[Yy]* ) 
-			ln -sf ~/.vim/shellconfig/zshrc ~/.zshrc ;
+			ln -sf $CURRENT_DIRECTORY/zshrc ~/.zshrc ;
 			break;;
 		[Nn]* ) echo "Done with zshrc";
 			break;;
@@ -174,7 +175,7 @@ while true; do
 	read -p "Are you on an GNOME Terminal right now? y or n? " yn
 	case $yn in
 		[Yy]* ) 
-			cat ~/.vim/shellconfig/bashrc >> ~/.bashrc
+			cat $CURRENT_DIRECTORY/bashrc >> ~/.bashrc
 			break;;
 		[Nn]* ) echo "Done with bash configs for GNOME terminals";
 			break;;
