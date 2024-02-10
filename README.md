@@ -43,10 +43,7 @@ However, there is a strong case to be made for easy setups that get you up and r
   6. (optional) - otherline powerline fonts can be found at [https://github.com/powerline/fonts] (https://github.com/powerline/fonts)
 
 # Update
-	1. git clone vundle first
-		$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-	2. Run install script - it updates too!
+	Run install script - it updates too!
 		$ cd ~/.vim
 		$ ./install.sh
 
