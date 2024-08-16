@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=/opt/homebrew/Cellar/glslang/11.11.0/bin:/usr/local/bin$HOME/bin:/usr/local/bin:$HOME/.avm/bin:$HOME/bin/aptos:/usr/local/sbin:$HOME/go/bin:$PATH
+export PATH=/usr/local/bin:$HOME/bin:/usr/local/bin:$HOME/.avm/bin:$HOME/bin/aptos:/usr/local/sbin:$HOME/go/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/steviesh/.oh-my-zsh"
+export ZSH="/Users/stephenhuh/.oh-my-zsh"
 
 
 autoload -U compinit
@@ -154,3 +154,10 @@ alias gs=/Users/steviesh/gitrepos/git-scheduler/main.sh
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Created by `pipx` on 2024-05-11 23:35:10
+export PATH="$PATH:/Users/stephenhuh/.local/bin"

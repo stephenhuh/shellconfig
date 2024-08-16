@@ -121,6 +121,8 @@ For more info just search through the info on the tools:
 * use visual mode scrolling to copy and paste
 * `:reg` the killer register feature
 * gD, gd, g*, g# for go-to like functionality
+* `*` select next cursor matching one current
+* `#` select previous current word
 
 ## Wicked Vim-specific things
 ---
@@ -155,6 +157,8 @@ autocmd! #clear autocmds
 * f<?>, F<?> skip to ? char - forward and backwards
 * cw -> change word at cursor
 * ciw -> change full word 
+* gd -> go to definition
+* ctrl+o, ctrl+i go back in jumplist, go forward
 
 
 ## My Selected Tools

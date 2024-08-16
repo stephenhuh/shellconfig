@@ -1,0 +1,107 @@
+{
+
+    // Open JSON editor for settings
+    "workbench.settings.editor": "json",
+
+    // Theme
+    "workbench.colorTheme": "GitHub Dark Default",
+
+    // Change font
+    "editor.fontFamily": "Geist Mono",
+    "scm.inputFontFamily": "Geist Mono",
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+    "chat.editor.fontFamily": "Geist Mono",
+    "debug.console.fontFamily": "Geist Mono",
+    "editor.codeLensFontFamily": "Geist Mono",
+    "notebook.output.fontFamily": "Geist Mono",
+    "markdown.preview.fontFamily": "Geist Mono",
+    "editor.inlayHints.fontFamily": "Geist Mono",
+
+    // Font size
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 12,
+
+
+    // UI
+    "editor.minimap.enabled": false,
+    "window.commandCenter": false,
+    "editor.scrollbar.vertical": "auto",
+    "window.titleBarStyle": "custom",
+    "editor.scrollbar.horizontal": "auto",
+
+    // APC
+    "apc.activityBar": {
+        "position": "bottom",
+        "hideSettings": true,
+        "size": 28
+    },
+    "apc.electron": {
+        "titleBarStyle": "hiddenInset",
+        "trafficLightPosition": {
+        "x": 12,
+        "y": 10
+        }
+    },
+    "apc.font.family": "Geist Mono",
+    "apc.monospace.font.family": "Geist Mono",
+    "apc.statusBar": {
+        "position": "editor-bottom",
+        "height": 28,
+        "fontSize": 12
+    },
+
+      // Aura theme customisation
+    "workbench.colorCustomizations": {
+        "[Aura Dark]": {
+        "editor.background": "#110f17",
+        "terminal.background": "#110f17",
+        "activityBar.background": "#110f17",
+        "statusBar.background": "#110f17",
+        "editorGroupHeader.tabsBackground": "#110f17",
+        "tab.inactiveBackground": "#110f17"
+        }
+    },
+
+    // Tabs
+    // Only show the current, why need the rest?
+    "workbench.editor.showTabs": "single",
+    "workbench.editor.enablePreview": false,
+    "explorer.openEditors.visible" : 1,
+
+
+    // Misc
+    "explorer.compactFolders": false,
+    "editor.tabSize": 2,
+    "editor.linkedEditing": true,
+    "breadcrumbs.filePath": "off",
+    "files.trimTrailingWhitespace": true,
+    "[markdown]": {
+      "files.trimTrailingWhitespace": false
+    },
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+
+    // This is a workaround to make font size of file explorer smaller
+    // see: https://github.com/microsoft/vscode/issues/519
+    "window.zoomLevel": 0.75,
+
+
+    "pylint.cwd": "${fileDirname}",
+    "mypy.dmypyExecutable": "",
+    "files.autoSave": "afterDelay",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "biome.rename": true,
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnType": true,
+    "redhat.telemetry.enabled": false,
+    "terminal.external.osxExec": "Warp.app",
+    "workbench.statusBar.visible": false,
+    "workbench.iconTheme": "moxer-icons",
+    "cursor.cmdk.useThemedDiffBackground": true,
+    "workbench.settings.applyToAllProfiles": [
+      "editor.fontFamily"
+    ],
+    "zenMode.showTabs": "none"
+}
