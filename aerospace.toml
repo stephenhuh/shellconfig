@@ -173,7 +173,67 @@ B = 'studio'
 C = 'lg sdqhd \(1\)'
 D = 'lg sdqhd \(2\)'
 
+# switch workspaces
+ctrl-left = 'workspace prev'
+ctrl-right = 'workspace next'
+
+
+## Left Monitor (workspace 3|C)
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
 if.app-id = 'dev.warp.Warp-Stable'
-run = 'move-node-to-workspace 2'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.window-title-regex-substring = '.+(cursor).+'
+run = 'move-node-to-workspace 1'
+
+## Right Monitor (workspace 4|D)
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = 'move-node-to-workspace D'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace D'
+
+## Floating Apps
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+check-further-callbacks = true
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+check-further-callbacks = true
+run = 'layout floating'
+
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'
+check-further-callbacks = true
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.raycast.macos'
+check-further-callbacks = true
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'au.com.michaeltigas.FocusedWork'
+check-further-callbacks = true
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.binarynights.ForkLift'
+check-further-callbacks = true
+run = 'layout floating'
+
+
