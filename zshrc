@@ -148,9 +148,8 @@ alias tf=terraform
 alias gs=/Users/steviesh/gitrepos/git-scheduler/main.sh
 
 
-#export PYENV_ROOT="$HOME/.pyenv"
-#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+eval "$(pyenv init -)"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
@@ -161,3 +160,31 @@ export NVM_DIR="$HOME/.nvm"
 
 # Created by `pipx` on 2024-05-11 23:35:10
 export PATH="$PATH:/Users/stephenhuh/.local/bin"
+
+export DVM_DIR="/Users/stephenhuh/.dvm"
+export PATH="$DVM_DIR/bin:$PATH"
+
+# bun completions
+[ -s "/Users/stephenhuh/.bun/_bun" ] && source "/Users/stephenhuh/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/stephenhuh/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+#
+#
+# onepassword cli
+eval "$(op completion zsh)"; compdef _op op
+
+## Docker
+export PATH=$PATH:~/.docker/bin
+## Fly
+export FLYCTL_INSTALL="/Users/stephenhuh/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
